@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 require_once 'OauFaceWars.php';
 $cron = new OauFaceWars();
