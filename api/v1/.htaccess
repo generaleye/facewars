@@ -1,0 +1,7 @@
+#HTACCESS file
+
+Options +FollowSymlinks
+RewriteEngine On
+#to route requests from v1/index.php/register to /v1/register
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ %{ENV:BASE}index.php [QSA,L]
