@@ -25,8 +25,8 @@ class OauFaceWars
 
     public function insertDate() {
 
-        $date = "2015-06-20";
-        //$date = date("Y-m-d", time());
+//        $date = "2015-06-20";
+        $date = date("Y-m-d", time());
 
         if (!$this->doesDateExist($date)) {
                             // insert query
