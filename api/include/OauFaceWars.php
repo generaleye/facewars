@@ -11,7 +11,7 @@ class OauFaceWars
 {
 
     private $conn;
-    private $dept = array("CSC","MEE","MSE","EEG","EGL");
+    private $dept = array("CSC","MEE","MSE","EEG", "AGE", "FST", "CVE", "CHE", "LAW", "DSS", "ECN", "GPY", "PSY", "POL", "CHM", "PHY", "MTH", "GLY", "BCH", "BOT", "ZOO","EGL");
     private $year = array(2010,2011,2012,2013,2014);
 
     function __construct()
