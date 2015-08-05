@@ -192,8 +192,8 @@ function today() {
     $token = $req->params('token');
 
     //Get current date
-    //$date = date("Y-m-d", time());
-    $date = '2015-06-10';
+    $date = date("Y-m-d", time());
+    //$date = '2015-06-10';
 
     $response = array();
 
@@ -238,8 +238,8 @@ function leaderboard() {
     $marker = $req->params('marker');
 
     //Get current date
-    //$date = date("Y-m-d", time());
-    $date = '2015-06-19';
+    $date = date("Y-m-d", time());
+    //$date = '2015-06-19';
 
     $response = array();
 
