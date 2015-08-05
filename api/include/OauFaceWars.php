@@ -229,4 +229,21 @@ class OauFaceWars
         }
         return TRUE;
     }
+
+    public function cronTest() {
+        $datetime = date("Y-m-d H:i:s", time());
+        $sql = "INSERT INTO tests (`created_time`)
+                VALUES (:created_time)";
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam("created_time", $datetime);
+            $stmt->execute();
+            $test_id = $this->conn->lastInsertId();
+            return $test_id;
+
+        } catch(PDOException $e) {
+            echo '{"error":{"text":'. $e->getMessage() .'}}';
+        }
+    }
+
 }
