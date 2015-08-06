@@ -1,3 +1,0 @@
-#!/bin/bash
-
-wget -O - http://oau-facewars.rhcloud.com/api/include/cron_script.php >/dev/null 2>&1
