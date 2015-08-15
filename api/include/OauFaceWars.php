@@ -27,13 +27,15 @@ class OauFaceWars
 
 //        $date = "2015-06-20";
         $date = date("Y-m-d", time());
+        $datetime = date("Y-m-d H:i:s", time());
 
         if (!$this->doesDateExist($date)) {
                             // insert query
-            $sql = "INSERT INTO dates (`date`) VALUES (:date)";
+            $sql = "INSERT INTO dates (`date`, `created_time`) VALUES (:date, :created_time)";
             try {
                 $stmt = $this->conn->prepare($sql);
                 $stmt->bindParam("date", $date);
+                $stmt->bindParam("created_time", $datetime);
                 $stmt->execute();
                 $date_id = $this->conn->lastInsertId();
                 return $date_id;
