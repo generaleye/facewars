@@ -16,6 +16,7 @@ class OauFaceWars
 
     function __construct()
     {
+        date_default_timezone_set('Africa/Lagos');
         require_once dirname(__FILE__) . '/DbConnect.php';
         // opening db connection
         $db = new DbConnect();
