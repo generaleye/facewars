@@ -218,6 +218,7 @@ $app->post('/vote', 'authenticate', 'vote');
 $app->get('/shuffle', 'shuffleImg');
 $app->post('/comment', 'authenticate', 'postComment');
 $app->get('/comment', 'getComment');
+$app->post('/contact', 'contactUs');
 
 
 $app->run();
@@ -514,6 +515,46 @@ function getComment() {
         $response['error'] = FALSE;
         $response['date_id'] = $dateId;
         $response['comments'] = $comments;
+    }
+
+    echoResponse(200, $response);
+}
+
+
+function contactUs() {
+    $app = \Slim\Slim::getInstance();
+    verifyRequiredParams(array('name', 'email','message'));
+    $req = $app->request(); // Getting parameters
+    $token = $req->params('token');
+    $name = $req->params('name');
+    $email = $req->params('email');
+    $message = $req->params('message');
+    validateEmail($email);
+
+    //Get current date
+    //$date = date("Y-m-d", time());
+    //$date = '2015-06-11';
+
+    $response = array();
+
+    $db = new DBHandler();
+
+    if (isset ($token)) {
+        $tox = $db->getUserByToken($token);
+        $userId = $tox['user_id'];
+    } else {
+        $userId = "";
+    }
+
+
+    $message_id = $db->contactUs($name,$email,$userId,$message);
+    if ($message_id != NULL) {
+        $response['error'] = FALSE;
+        $response['contact_id'] = $message_id;
+        $response['message'] = "Message has been Posted Successfully";
+    } else {
+        $response['error'] = TRUE;
+        $response['message'] = "An error occurred. Please try again";
     }
 
     echoResponse(200, $response);

@@ -80,3 +80,14 @@ CREATE TABLE IF NOT EXISTS `comments` (
   CONSTRAINT `fk_comments_date_id` FOREIGN KEY (`date_id`) REFERENCES dates(`date_id`),
   CONSTRAINT `fk_comments_user_id` FOREIGN KEY (`user_id`) REFERENCES users(`user_id`)
 ) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `message_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_name` VARCHAR(50) NOT NULL,
+  `email_address` VARCHAR(255) NOT NULL,
+  `secret_user_id` VARCHAR(255) NULL,
+  `message` TEXT NOT NULL,
+  `created_time` DATETIME NOT NULL,
+  `active_status` TINYINT(1) UNSIGNED NOT NULL DEFAULT 1,
+  PRIMARY KEY (`message_id`)
+) ENGINE=InnoDB;

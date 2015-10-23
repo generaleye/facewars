@@ -433,6 +433,25 @@ class DbHandler
         }
     }
 
+    public function contactUs($name,$email,$secret_user_id,$message) {
+        $datetime = date("Y-m-d H:i:s", time());
+        $sql = "INSERT INTO messages (`user_name`, `email_address`, `secret_user_id`, `message`, `created_time`)
+                VALUES (:user_name, :email_address, :secret_user_id, :message, :time_posted)";
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam("user_name", $name);
+            $stmt->bindParam("email_address", $email);
+            $stmt->bindParam("secret_user_id", $secret_user_id);
+            $stmt->bindParam("message", $message);
+            $stmt->bindParam("time_posted", $datetime);
+            $stmt->execute();
+            $message_id = $this->conn->lastInsertId();
+            return $message_id;
+        } catch(PDOException $e) {
+            echo '{"error":{"text":'. $e->getMessage() .'}}';
+        }
+    }
+
 
     public function getProfileById($id,$dir) {
         $sql = "SELECT `user_id`, `first_name` AS `fname`, `last_name` AS `lname`, `phone_number` AS `phone`, CONCAT(:dir, profile_picture) AS `profile_picture`, `street`, `city`, `state`, `country`, `company_name` AS `cname`, `company_street` AS `cstreet`, `company_city` AS `ccity`, `company_state` AS `cstate`, `company_country` AS `ccountry`, `created_time` FROM `users` WHERE `user_id` =:id";
