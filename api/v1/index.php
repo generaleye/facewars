@@ -53,7 +53,7 @@ function authenticate(\Slim\Route $route) {
 }
 
 /**
- * REGISTER AND LOGIN FUNCTIONS
+ * REGISTER, LOGIN AND SIGN-IN FUNCTIONS
  **/
 $app->post('/register', function() use ($app) {
     // check for required params
@@ -78,7 +78,7 @@ $app->post('/register', function() use ($app) {
         if ($user != NULL) {
             $response["error"] = FALSE;
             $response['email_address'] = $user['email_address'];
-            $response['isVerified'] = FALSE;
+            $response['is_verified'] = FALSE;
             $response['created_time'] = $user['created_time'];
             $response["message"] = "Registration Successful";
         } else {
@@ -119,9 +119,9 @@ $app->post('/login', function() use ($app) {
 
         if ($user != NULL) {
             $response["error"] = FALSE;
-            $response['email'] = $user['email_address'];
+            $response['email_address'] = $user['email_address'];
             $response['token'] = $user['token'];
-            $response['isVerified'] = TRUE;
+            $response['is_verified'] = TRUE;
             $response['created_time'] = $user['created_time'];
             $response['message'] = "Login Successful";
         } else {
@@ -132,7 +132,7 @@ $app->post('/login', function() use ($app) {
     } elseif ($login == USER_NOT_VERIFIED) {
         // user not verified
         $response['error'] = TRUE;
-        $response['isVerified'] = FALSE;
+        $response['is_verified'] = FALSE;
         $response['message'] = 'You have not been Verified';
     } else {
         // user credentials are wrong
@@ -143,13 +143,81 @@ $app->post('/login', function() use ($app) {
     echoResponse(200, $response);
 });
 
+$app->post('/signin', function() use ($app) {
+    // check for required params
+    verifyRequiredParams(array('email'));
+
+    $response = array();
+    $req = $app->request(); // Getting parameters
+    // reading post params
+    $first_name = ""; //$req->params('fname');
+    $last_name = ""; //$req->params('lname');
+    $email = $req->params('email');
+    $password = "openshift"; //$req->params('password');
+    // validating email address
+    validateEmail($email);
+
+    $db = new DbHandler();
+
+    $login = $db->checkLogin($email, $password);
+    if ($login == LOGIN_SUCCESSFUL) {
+        // get the user by email
+        $user = $db->getUserByEmail($email);
+
+        if ($user != NULL) {
+            $response["error"] = FALSE;
+            $response['state'] = 'sign_in';
+            $response['email_address'] = $user['email_address'];
+            $response['token'] = $user['token'];
+            $response['is_verified'] = TRUE;
+            $response['created_time'] = $user['created_time'];
+            $response['message'] = "Signin Successful";
+        } else {
+            // unknown error occurred
+            $response['error'] = TRUE;
+            $response['message'] = "An error occurred. Please try again";
+        }
+    } elseif ($login == USER_NOT_VERIFIED) {
+        // user not verified
+        $response['error'] = TRUE;
+        $response['state'] = 'not_verified';
+        $response['is_verified'] = FALSE;
+        $response['message'] = 'You have not been Verified';
+    } else {
+        $res = $db->createUser($first_name, $last_name, $email, $password);
+        if ($res == REGISTRATION_SUCCESSFUL) {
+            $user = $db->getUserByEmail($email);
+
+            if ($user != NULL) {
+                $response["error"] = FALSE;
+                $response['state'] = 'register';
+                $response['email_address'] = $user['email_address'];
+                $response['is_verified'] = FALSE;
+                $response['created_time'] = $user['created_time'];
+                $response["message"] = "Registration Successful";
+            } else {
+                // unknown error occurred
+                $response['error'] = TRUE;
+                $response['message'] = "An error occurred. Please try again";
+            }
+        } else if ($res == REGISTRATION_FAILED) {
+            $response["error"] = TRUE;
+            $response["message"] = "Oops! An error occurred while registering";
+        }
+    }
+
+    // echo json response
+    echoResponse(200, $response);
+});
+
 $app->post('/verify', 'verifyAccount');
 $app->get('/today', 'today');
 $app->get('/leaderboard', 'leaderboard');
+$app->get('/competition', 'competition');
 $app->post('/vote', 'authenticate', 'vote');
 $app->get('/shuffle', 'shuffleImg');
-$app->post('/postcomment', 'authenticate', 'postComment');
-$app->get('/getcomment', 'getComment');
+$app->post('/comment', 'authenticate', 'postComment');
+$app->get('/comment', 'getComment');
 
 
 $app->run();
@@ -172,7 +240,7 @@ function verifyAccount() {
 
         if ($verify == TRUE) {
             $response["error"] = FALSE;
-            $response['message'] = "Account has been Verified";
+            $response['message'] = "Your account has been Verified";
         } else {
             // unknown error occurred
             $response['error'] = TRUE;
@@ -284,6 +352,51 @@ function leaderboard() {
     echoResponse(200, $response);
 }
 
+function competition() {
+    $app = \Slim\Slim::getInstance();
+    verifyRequiredParams(array('date_id'));
+    $req = $app->request(); // Getting parameters
+    $token = $req->params('token');
+    $dateId = $req->params('date_id');
+
+    //Get current date
+    $date = date("Y-m-d", time());
+    //$date = '2015-06-19';
+
+    $response = array();
+
+    $db = new DBHandler();
+    $getToday = $db->getDateId($date);
+    $todayId = $getToday['date_id'];
+
+    if ($todayId != $dateId) {
+        $response['error'] = FALSE;
+//    $response['date'] = $date;
+        $response['date_id'] = $dateId;
+
+        if (isset($token)) {
+            $tox = $db->getUserByToken($token);
+            $userId = $tox['user_id'];
+            $voteQues = $db->hasUserVoted($dateId, $userId);
+            if ($voteQues['voted']) {
+                $response['voted'] = TRUE;
+                $response['competitor_id'] = $voteQues['voteArr']['competitor_id'];
+            } else {
+                $response['voted'] = FALSE;
+            }
+        } else {
+            $response['voted'] = FALSE;
+        }
+        $response['competition'] = $db->getCompetitorsByDate($dateId);
+        $response['comments'] = $db->getComment($dateId);
+    } else {
+        $response['error'] = TRUE;
+        $response['message'] = 'An Error Occurred';
+    }
+
+    echoResponse(200, $response);
+}
+
 function vote() {
     $app = \Slim\Slim::getInstance();
     verifyRequiredParams(array('competitor_id'));
@@ -292,8 +405,8 @@ function vote() {
     $competitor_id = $req->params('competitor_id');
 
     //Get current date
-    //$date = date("Y-m-d", time());
-    $date = '2015-06-11';
+    $date = date("Y-m-d", time());
+//    $date = '2015-06-11';
 
     $response = array();
 

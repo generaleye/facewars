@@ -8,7 +8,7 @@ if ($_SERVER["SERVER_NAME"]=="localhost") {
     define('DB_HOST', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', 'root');
-    define('DB_NAME', 'passport');
+    define('DB_NAME', 'oaufacewars');
 } elseif ($_SERVER["SERVER_NAME"]=="oau-facewars.rhcloud.com") {
     define('DB_HOST', '127.3.78.130');
     define('DB_USERNAME', 'admingRTgyYC');

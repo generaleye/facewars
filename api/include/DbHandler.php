@@ -421,7 +421,7 @@ class DbHandler
     }
 
     public function getComment($date_id) {
-        $sql = "SELECT `comment_id`, `date_id`, comments.user_id, users.first_name, users.last_name, `comment`, comments.created_time FROM `comments`, `users` WHERE `date_id` = :date_id AND comments.user_id = users.user_id AND comments.active_status = 1 ORDER BY comment_id DESC";
+        $sql = "SELECT `comment_id`, comments.user_id, `comment`, comments.created_time FROM `comments`, `users` WHERE `date_id` = :date_id AND comments.user_id = users.user_id AND comments.active_status = 1 ORDER BY comment_id DESC";
         try {
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam("date_id", $date_id);
