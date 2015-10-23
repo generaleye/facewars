@@ -511,8 +511,9 @@ function getComment() {
         $response['date_id'] = $dateId;
         $response['comments'] = $comments;
     } else {
-        $response['error'] = TRUE;
-        $response['message'] = "An error occurred. Please try again";
+        $response['error'] = FALSE;
+        $response['date_id'] = $dateId;
+        $response['comments'] = $comments;
     }
 
     echoResponse(200, $response);
