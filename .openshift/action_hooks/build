@@ -1,1 +1,1 @@
-ln -sf ${OPENSHIFT_DATA_DIR} ${OPENSHIFT_REPO_DIR}/public/data
+ln -sf ${OPENSHIFT_DATA_DIR}/images ${OPENSHIFT_REPO_DIR}/images
