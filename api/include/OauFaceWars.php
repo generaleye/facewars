@@ -43,6 +43,8 @@ class OauFaceWars
             } catch(PDOException $e) {
                 echo '{"error":{"text":'. $e->getMessage() .'}}';
             }
+        } else {
+            return NULL;
         }
     }
 
@@ -85,13 +87,14 @@ class OauFaceWars
         }
     }
 
-    private function insertIntoCompetitors($date_id, $matricNo, $datetime) {
+    private function insertIntoCompetitors($date_id, $matricNo, $img_url, $datetime) {
 
-        $sql = "INSERT INTO competitors (`date_id`,`matric_no`,`created_time`,`modified_time`) VALUES (:date_id, :matric, :created, :modified)";
+        $sql = "INSERT INTO competitors (`date_id`,`matric_no`, img_url,`created_time`,`modified_time`) VALUES (:date_id, :matric, :img_url, :created, :modified)";
         try {
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam("date_id", $date_id);
             $stmt->bindParam("matric", $matricNo);
+            $stmt->bindParam("img_url", $img_url);
             $stmt->bindParam("created", $datetime);
             $stmt->bindParam("modified", $datetime);
             $stmt->execute();
@@ -118,6 +121,9 @@ class OauFaceWars
     }
 
     public function generateCompetitors($date_id) {
+        $date = date("Y-m-d", time());
+        $dir = '../../images/'.$date;
+        mkdir($dir,0777);
         $dept = $this->dept;
         $year = $this->year;
         $imageArr = array();
@@ -133,7 +139,13 @@ class OauFaceWars
                         array_push($imageArr, $matricNo);
                         $datetime = date("Y-m-d H:i:s", time());
 
-                        $competitor_id = $this->insertIntoCompetitors($date_id, $matricNo, $datetime);
+                        $filename = count($imageArr).".jpg";
+
+//                        $source = "http://eportal.oauife.edu.ng/pic.php?image_id=csc/2010/05120142";
+//                        $dest = "../../images/".date("Y-m-d", time())."/uju.jpg";
+                        copy($url, $dir."/".$filename);
+
+                        $competitor_id = $this->insertIntoCompetitors($date_id, $matricNo, $date."/".$filename, $datetime);
 
                         $this->insertIntoBlacklist($matricNo, $competitor_id);
 

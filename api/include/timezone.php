@@ -14,3 +14,11 @@ echo "</br>";
 echo date("Y-m-d H:i:s", time());
 echo "</br>";
 echo date_default_timezone_get();
+
+//mkdir('../../images/'.date("Y-m-d", time()),0777);
+//
+//$source = "http://eportal.oauife.edu.ng/pic.php?image_id=csc/2010/05120142";
+//$dest = "../../images/".date("Y-m-d", time())."/uju.jpg";
+//copy($source, $dest);
+
+echo $_ENV['OPENSHIFT_DATA_DIR'];

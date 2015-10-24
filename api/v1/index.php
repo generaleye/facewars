@@ -57,20 +57,20 @@ function authenticate(\Slim\Route $route) {
  **/
 $app->post('/register', function() use ($app) {
     // check for required params
-    verifyRequiredParams(array('fname','lname','email','password'));
+    verifyRequiredParams(array('email','password'));
 
     $response = array();
     $req = $app->request(); // Getting parameters
     // reading post params
-    $first_name = $req->params('fname');
-    $last_name = $req->params('lname');
+//    $first_name = $req->params('fname');
+//    $last_name = $req->params('lname');
     $email = $req->params('email');
     $password = $req->params('password');
     // validating email address
     validateEmail($email);
 
     $db = new DbHandler();
-    $res = $db->createUser($first_name, $last_name, $email, $password);
+    $res = $db->createUser("", "", $email, $password);
 
     if ($res == REGISTRATION_SUCCESSFUL) {
         $user = $db->getUserByEmail($email);
@@ -288,7 +288,7 @@ function today() {
             $response['voted'] = FALSE;
         }
 
-        $response['competitors'] = $db->getCompetitorsByDate($dateId);
+        $response['competitors'] = $db->getCompetitorsByDate($dateId,IMAGE_URL);
 
     } else {
         $response['error'] = TRUE;
@@ -340,7 +340,7 @@ function leaderboard() {
             }
             $response['competitions'][$i]['date'] = $dateArr[$i]['date'];
             $response['competitions'][$i]['date_id'] = $dateArr[$i]['date_id'];
-            $response['competitions'][$i]['competitors'] = $db->getCompetitorsByDate($dateArr[$i]['date_id']);
+            $response['competitions'][$i]['competitors'] = $db->getCompetitorsByDate($dateArr[$i]['date_id'],IMAGE_URL);
         }
 
 
@@ -388,7 +388,7 @@ function competition() {
         } else {
             $response['voted'] = FALSE;
         }
-        $response['competition'] = $db->getCompetitorsByDate($dateId);
+        $response['competition'] = $db->getCompetitorsByDate($dateId,IMAGE_URL);
         $response['comments'] = $db->getComment($dateId);
     } else {
         $response['error'] = TRUE;

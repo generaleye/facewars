@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `competitors` (
   `competitor_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `date_id` INT UNSIGNED NOT NULL,
   `matric_no` VARCHAR(12) NOT NULL,
+  `img_url` VARCHAR(100) NOT NULL,
   `votes` INT NOT NULL DEFAULT 0,
   `position` INT NOT NULL DEFAULT 0,
   `created_time` DATETIME NOT NULL,

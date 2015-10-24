@@ -361,11 +361,12 @@ class DbHandler
         }
     }
 
-    public function getCompetitorsByDate($date_id) {
-        $sql = "SELECT `competitor_id`, CONCAT('http://eportal.oauife.edu.ng/pic.php?image_id=', matric_no, '20142') AS `img_url`, `votes`, `position` FROM `competitors` WHERE `date_id` = :date_id";
+    public function getCompetitorsByDate($date_id,$dir) {
+        $sql = "SELECT `competitor_id`, CONCAT(:dir,img_url) AS `img_url`, `votes`, `position` FROM `competitors` WHERE `date_id` = :date_id";
         try {
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam("date_id", $date_id);
+            $stmt->bindParam("dir", $dir);
             $stmt->execute();
             $competitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $competitors;
