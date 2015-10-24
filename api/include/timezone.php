@@ -21,5 +21,11 @@ $source = "http://eportal.oauife.edu.ng/pic.php?image_id=csc/2010/05120142";
 $dest = $_ENV['OPENSHIFT_DATA_DIR']."images/".date("Y-m-d", time())."/uju.jpg";
 copy($source, $dest);
 
+echo '</br>';
 echo $_ENV['OPENSHIFT_DATA_DIR'];
+echo '</br>';
 echo $dest;
+echo '</br>';
+
+$image = file_get_contents("http://eportal.oauife.edu.ng/pic.php?image_id=csc/2010/05120142");
+file_put_contents($_ENV['OPENSHIFT_DATA_DIR']."images", $image);
