@@ -15,7 +15,7 @@ if ($_SERVER["SERVER_NAME"]=="localhost") {
     define('DB_USERNAME', 'admingRTgyYC');
     define('DB_PASSWORD', 'm_gi2P-rhRC1');
     define('DB_NAME', 'oau');
-    define('IMAGE_URL', 'http:/oau-facewars.rhcloud.com/images/');
+    define('IMAGE_URL', 'http://oau-facewars.rhcloud.com/images/');
 }
 
 

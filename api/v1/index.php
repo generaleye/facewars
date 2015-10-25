@@ -455,11 +455,20 @@ function vote() {
 
 function shuffleImg() {
     $response = array();
-    $croned = new OauFaceWars();
-    $shuffled_img = $croned->shuffleImage();
+//    $croned = new OauFaceWars();
+//    $shuffled_img = $croned->shuffleImage();
+    $db = new DBHandler();
 
-    $response['error'] = FALSE;
-    $response['img_url'] = $shuffled_img;
+    $random = $db->getRandomCompetitor(IMAGE_URL);
+    if ($random != NULL) {
+        $response['error'] = FALSE;
+        $response['img_url'] = $random;
+    } else {
+        $response['error'] = TRUE;
+        $response['message'] = "An error occurred. Please try again";
+    }
+//    $response['error'] = FALSE;
+//    $response['img_url'] = $shuffled_img;
 
     echoResponse(200, $response);
 }
@@ -512,9 +521,8 @@ function getComment() {
         $response['date_id'] = $dateId;
         $response['comments'] = $comments;
     } else {
-        $response['error'] = FALSE;
-        $response['date_id'] = $dateId;
-        $response['comments'] = $comments;
+        $response['error'] = TRUE;
+        $response['message'] = "An error occurred. Please try again";
     }
 
     echoResponse(200, $response);

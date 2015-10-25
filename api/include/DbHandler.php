@@ -402,6 +402,19 @@ class DbHandler
         }
     }
 
+    public function getRandomCompetitor($dir) {
+        $sql = "SELECT `competitor_id`, CONCAT(:dir,img_url) AS `img_url` FROM `competitors` WHERE `active_status` = 1 ORDER BY RAND() LIMIT 1";
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam("dir", $dir);
+            $stmt->execute();
+            $competitors = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $competitors;
+        } catch(PDOException $e) {
+            echo '{"error":{"text":'. $e->getMessage() .'}}';
+        }
+    }
+
 
     public function postComment($date_id,$user_id,$comment) {
         $datetime = date("Y-m-d H:i:s", time());
