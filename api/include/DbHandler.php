@@ -447,15 +447,13 @@ class DbHandler
         }
     }
 
-    public function contactUs($name,$email,$secret_user_id,$message) {
+    public function contactUs($user_id,$message) {
         $datetime = date("Y-m-d H:i:s", time());
-        $sql = "INSERT INTO messages (`user_name`, `email_address`, `secret_user_id`, `message`, `created_time`)
-                VALUES (:user_name, :email_address, :secret_user_id, :message, :time_posted)";
+        $sql = "INSERT INTO messages (`user_id`, `message`, `created_time`)
+                VALUES (:user_id, :message, :time_posted)";
         try {
             $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam("user_name", $name);
-            $stmt->bindParam("email_address", $email);
-            $stmt->bindParam("secret_user_id", $secret_user_id);
+            $stmt->bindParam("user_id", $user_id);
             $stmt->bindParam("message", $message);
             $stmt->bindParam("time_posted", $datetime);
             $stmt->execute();
