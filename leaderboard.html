@@ -20,13 +20,6 @@
 <body class="all-content">
 <header id="header">
     <ul class="header-inner">
-        <!--<li id="menu-trigger" data-trigger="#sidebar"> -->
-        <!--<div class="line-wrap">-->
-        <!--<div class="line top"></div>-->
-        <!--<div class="line center"></div>-->
-        <!--<div class="line bottom"></div>-->
-        <!--</div>-->
-        <!--</li>-->
 
         <li class="logo hidden-xs">
             <a href="index.html">OAU FaceWars</a>
@@ -34,33 +27,6 @@
 
         <li class="pull-right">
             <ul class="top-menu">
-                <!--<li id="toggle-width">-->
-                <!--<div class="toggle-switch">-->
-                <!--<input id="tw-switch" type="checkbox" hidden="hidden">-->
-                <!--<label for="tw-switch" class="ts-helper"></label>-->
-                <!--</div>-->
-                <!--</li>-->
-                <li id="top-search">
-                    <a class="tm-search" href=""></a>
-                </li>
-
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="tm-settings" href=""></a>
-                    <ul class="dropdown-menu dm-icon pull-right">
-                        <li class="hidden-xs">
-                            <a data-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a>
-                        </li>
-                        <li>
-                            <a data-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> Clear Local Storage</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="zmdi zmdi-face"></i> Privacy Settings</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="zmdi zmdi-settings"></i> Other Settings</a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="tm-settings" href=""></a>
                     <ul class="dropdown-menu dm-icon pull-right">
@@ -84,17 +50,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
-                    <a class="tm-chat" href=""></a>
-                </li>
+            </ul>
         </li>
     </ul>
-
-    <!-- Top Search Content -->
-    <div id="top-search-wrap">
-        <input type="text">
-        <i id="top-search-close">&times;</i>
-    </div>
 </header>
 
 <section id="main">
@@ -195,509 +153,92 @@
             </ul>
         </div>
 
-        <!--<div class="card-body card-padding">-->
+        <div id="leaderboard-body" class="card-body card-padding">
+            <div id="test">
+                <!--<div class="p-timeline">-->
+                    <!--<div class="pt-line c-gray text-right">-->
+                        <!--<span class="d-block">2015</span>-->
+                        <!--05/08-->
+                    <!--</div>-->
 
-            <!--<div class="contacts clearfix row">-->
-                <!--<div class="col-md-offset-1 col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                    <!--<div class="c-item">-->
-                        <!--<a class="ci-avatar lightbox">-->
-                            <!--<div data-src="img/contacts/1.jpg" class="lightbox-item">-->
-                                <!--<img src="img/contacts/1.jpg" alt="">-->
+                    <!--<div class="pt-body">-->
+                        <!--<h2 class="ptb-title">5th of August 2015</h2>-->
+
+                        <!--<div class="contacts clearfix row">-->
+                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
+                                <!--<div class="c-item">-->
+                                    <!--<a class="ci-avatar lightbox">-->
+                                        <!--<div data-src="img/contacts/1.jpg" class="lightbox-item">-->
+                                            <!--<img src="img/contacts/1.jpg" alt="">-->
+                                        <!--</div>-->
+
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="c-info">-->
+                                    <!--<strong>1</strong>-->
+                                <!--</div>-->
                             <!--</div>-->
 
-                        <!--</a>-->
-
-                        <!--<div class="c-info">-->
-                            <!--<strong>1</strong>-->
-                        <!--</div>-->
-
-                        <!--<div class="c-footer">-->
-                            <!--<button class="btn btn-primary waves-effect">Vote</button>-->
-                            <!--&lt;!&ndash;<button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Vote</button>&ndash;&gt;-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                    <!--<div class="c-item">-->
-                        <!--<a class="ci-avatar lightbox">-->
-                            <!--<div data-src="img/contacts/2.jpg" class="lightbox-item">-->
-                                <!--<img src="img/contacts/2.jpg" alt="">-->
+                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
+                                <!--<div class="c-item">-->
+                                    <!--<a class="ci-avatar lightbox">-->
+                                        <!--<div data-src="img/contacts/2.jpg" class="lightbox-item">-->
+                                            <!--<img src="img/contacts/2.jpg" alt="">-->
+                                        <!--</div>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="c-info">-->
+                                    <!--<strong>2</strong>-->
+                                <!--</div>-->
                             <!--</div>-->
-                        <!--</a>-->
 
-                        <!--<div class="c-info">-->
-                            <!--<strong>2</strong>-->
-                        <!--</div>-->
-
-                        <!--<div class="c-footer">-->
-                            <!--<button class="btn btn-primary waves-effect">Vote</button>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                    <!--<div class="c-item">-->
-                        <!--<a class="ci-avatar lightbox">-->
-                            <!--<div data-src="img/contacts/3.jpg" class="lightbox-item">-->
-                                <!--<img src="img/contacts/3.jpg" alt="">-->
+                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
+                                <!--<div class="c-item">-->
+                                    <!--<a class="ci-avatar lightbox">-->
+                                        <!--<div data-src="img/contacts/3.jpg" class="lightbox-item">-->
+                                            <!--<img src="img/contacts/3.jpg" alt="">-->
+                                        <!--</div>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="c-info">-->
+                                    <!--<strong>3</strong>-->
+                                <!--</div>-->
                             <!--</div>-->
-                        <!--</a>-->
 
-                        <!--<div class="c-info">-->
-                            <!--<strong>3</strong>-->
-                        <!--</div>-->
-
-                        <!--<div class="c-footer">-->
-                            <!--<button class="btn btn-primary waves-effect">Vote</button>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                    <!--<div class="c-item">-->
-                        <!--<a class="ci-avatar lightbox">-->
-                            <!--<div data-src="img/contacts/4.jpg" class="lightbox-item">-->
-                                <!--<img src="img/contacts/4.jpg" alt="">-->
+                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
+                                <!--<div class="c-item">-->
+                                    <!--<a class="ci-avatar lightbox">-->
+                                        <!--<div data-src="img/contacts/4.jpg" class="lightbox-item">-->
+                                            <!--<img src="img/contacts/4.jpg" alt="">-->
+                                        <!--</div>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="c-info">-->
+                                    <!--<strong>4</strong>-->
+                                <!--</div>-->
                             <!--</div>-->
-                        <!--</a>-->
 
-                        <!--<div class="c-info">-->
-                            <!--<strong>4</strong>-->
-                        <!--</div>-->
-
-                        <!--<div class="c-footer">-->
-                            <!--<button class="btn btn-primary waves-effect">Vote</button>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                    <!--<div class="c-item">-->
-                        <!--<a class="ci-avatar lightbox">-->
-                            <!--<div data-src="img/contacts/5.jpg" class="lightbox-item">-->
-                                <!--<img src="img/contacts/5.jpg" alt="">-->
+                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
+                                <!--<div class="c-item">-->
+                                    <!--<a class="ci-avatar lightbox">-->
+                                        <!--<div data-src="img/contacts/5.jpg" class="lightbox-item">-->
+                                            <!--<img src="img/contacts/5.jpg" alt="">-->
+                                        <!--</div>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="c-info">-->
+                                    <!--<strong>5</strong>-->
+                                <!--</div>-->
                             <!--</div>-->
-                        <!--</a>-->
-
-                        <!--<div class="c-info">-->
-                            <!--<strong>5</strong>-->
                         <!--</div>-->
 
-                        <!--<div class="c-footer">-->
-                            <!--<button class="btn btn-primary waves-effect">Vote</button>-->
-                        <!--</div>-->
                     <!--</div>-->
+
                 <!--</div>-->
-
-
-
-            <!--</div>-->
-            <!--&lt;!&ndash;<div class="load-more">&ndash;&gt;-->
-            <!--&lt;!&ndash;<a href=""><i class="zmdi zmdi-refresh-alt"></i> Load More...</a>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--</div>-->
-        <div class="card-body card-padding">
-            <div class="p-timeline">
-                <div class="pt-line c-gray text-right">
-                    <span class="d-block">2015</span>
-                    05/08
-                </div>
-
-                <div class="pt-body">
-                    <h2 class="ptb-title">5th of August 2015</h2>
-
-                    <div class="contacts clearfix row">
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/1.jpg" class="lightbox-item">
-                                        <img src="img/contacts/1.jpg" alt="">
-                                    </div>
-
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>1</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/2.jpg" class="lightbox-item">
-                                        <img src="img/contacts/2.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>2</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/3.jpg" class="lightbox-item">
-                                        <img src="img/contacts/3.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>3</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/4.jpg" class="lightbox-item">
-                                        <img src="img/contacts/4.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>4</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/5.jpg" class="lightbox-item">
-                                        <img src="img/contacts/5.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>5</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
 
-            <div class="p-timeline">
-                <div class="pt-line c-gray text-right">
-                    <span class="d-block">2015</span>
-                    10/07
-                </div>
 
-                <div class="pt-body">
-                    <h2 class="ptb-title">10th of July 2015</h2>
 
-                    <div class="contacts clearfix row">
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/1.jpg" class="lightbox-item">
-                                        <img src="img/contacts/1.jpg" alt="">
-                                    </div>
-
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>1</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/2.jpg" class="lightbox-item">
-                                        <img src="img/contacts/2.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>2</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/3.jpg" class="lightbox-item">
-                                        <img src="img/contacts/3.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>3</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/4.jpg" class="lightbox-item">
-                                        <img src="img/contacts/4.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>4</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/5.jpg" class="lightbox-item">
-                                        <img src="img/contacts/5.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>5</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="p-timeline">
-                <div class="pt-line c-gray text-right">
-                    <span class="d-block">2015</span>
-                    12/06
-                </div>
-
-                <div class="pt-body">
-                    <h2 class="ptb-title">12th of June 2015</h2>
-
-                    <div class="contacts clearfix row">
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/1.jpg" class="lightbox-item">
-                                        <img src="img/contacts/1.jpg" alt="">
-                                    </div>
-
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>1</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/2.jpg" class="lightbox-item">
-                                        <img src="img/contacts/2.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>2</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/3.jpg" class="lightbox-item">
-                                        <img src="img/contacts/3.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>3</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/4.jpg" class="lightbox-item">
-                                        <img src="img/contacts/4.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>4</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/5.jpg" class="lightbox-item">
-                                        <img src="img/contacts/5.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>5</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="p-timeline">
-                <div class="pt-line c-gray text-right">
-                    <span class="d-block">2015</span>
-                    01/06
-                </div>
-
-                <div class="pt-body">
-                    <h2 class="ptb-title">1st of June 2015</h2>
-
-                    <div class="contacts clearfix row">
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/1.jpg" class="lightbox-item">
-                                        <img src="img/contacts/1.jpg" alt="">
-                                    </div>
-
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>1</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/2.jpg" class="lightbox-item">
-                                        <img src="img/contacts/2.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>2</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/3.jpg" class="lightbox-item">
-                                        <img src="img/contacts/3.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>3</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/4.jpg" class="lightbox-item">
-                                        <img src="img/contacts/4.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>4</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/5.jpg" class="lightbox-item">
-                                        <img src="img/contacts/5.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>5</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="p-timeline">
-                <div class="pt-line c-gray text-right">
-                    <span class="d-block">2015</span>
-                    22/04
-                </div>
-
-                <div class="pt-body">
-                    <h2 class="ptb-title">22nd of April 2015</h2>
-
-                    <div class="contacts clearfix row">
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/1.jpg" class="lightbox-item">
-                                        <img src="img/contacts/1.jpg" alt="">
-                                    </div>
-
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>1</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/2.jpg" class="lightbox-item">
-                                        <img src="img/contacts/2.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>2</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/3.jpg" class="lightbox-item">
-                                        <img src="img/contacts/3.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>3</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/4.jpg" class="lightbox-item">
-                                        <img src="img/contacts/4.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>4</strong>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">
-                            <div class="c-item">
-                                <a class="ci-avatar lightbox">
-                                    <div data-src="img/contacts/5.jpg" class="lightbox-item">
-                                        <img src="img/contacts/5.jpg" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="c-info">
-                                <strong>5</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
             <div class="clearfix"></div>
 
             <div class="load-more">
@@ -783,6 +324,94 @@
 
 <script src="js/functions.js"></script>
 <script src="js/demo.js"></script>
+<script src="js/moment.js"></script>
+<script type="text/javascript">
+    //            console.log(base_url);
+    function leaderboard() {
+        var api_u = localStorage.getItem('oaufacewars-api-url');
+        var token = localStorage.getItem('oaufacewars-token');
+        $.ajax({
+            type: "GET",
+            url: api_u+"/leaderboard",
+            timeout: 20000,
+            data: "token="+token,
+            success: function(data){
+                con = data;
+                //console.log(con);
+                console.log(con);
+                console.log(moment());
+
+                for (i = 0; i < con['competitions'].length; i++) {
+                    console.log(con['competitions'][i]);
+                    appender(con['competitions'][i]);
+                }
+                function appender(arr) {
+//                    var header = '' +
+//                            '<div id="leaderboard-body" class="p-timeline">'+
+//                            '<div class="pt-line c-gray text-right">'+
+//                            '<span class="d-block">2015</span>05/08'+
+//                            '</div>'+
+//                            '<div class="pt-body">'+
+//                            '<h2 class="ptb-title">'+arr['date_id']+'</h2>';
+
+                    var content_str = ''+
+                            '<div id="leaderboard-body" class="p-timeline">'+
+                            '<div class="pt-line c-gray text-right">'+
+                            '<span class="d-block">'+moment(arr['date']).format("YYYY")+'</span>'+moment(arr['date']).format("DD/MM")+
+                            '</div>'+
+                            '<div class="pt-body">'+
+                            '<h2 class="ptb-title">'+moment(arr['date']).format("dddd, MMMM Do YYYY")+'</h2>';
+                    for (j = 0; j < 5; j++) {
+                        var latest = ''+
+                                '<div class="contacts clearfix row">'+
+                                '<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">'+
+                                '<div class="c-item">'+
+                                '<a class="ci-avatar lightbox">'+
+                                '<div data-src="'+arr['competitors'][j]['img_url']+'" class="lightbox-item">'+
+                                '<img src="'+arr['competitors'][j]['img_url']+'" alt="">'+
+                                '</div>'+
+                                '</a>'+
+                                '</div>'+
+                                '<div class="c-info">'+
+                                '<strong>'+arr['competitors'][j]['position']+'</strong>'+
+                                '</div>'+
+                                '</div>';
+                        content_str = content_str.concat(latest);
+                    }
+//                    var content =''+
+//                            '<div class="contacts clearfix row">'+
+//                            '<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">'+
+//                            '<div class="c-item">'+
+//                            '<a class="ci-avatar lightbox">'+
+//                            '<div data-src="img/contacts/1.jpg" class="lightbox-item">'+
+//                            '<img src="img/contacts/1.jpg" alt="">'+
+//                            '</div>'+
+//                            '</a>'+
+//                            '</div>'+
+//                            '<div class="c-info">'+
+//                            '<strong>1</strong>'+
+//                            '</div>'+
+//                            '</div>';
+
+                    var footer = ''+
+                            '</div>'+
+                            '</div>';
+                    var leadbody = $('#test');
+                    leadbody.append(content_str.concat(footer));
+                }
+
+            },
+            error: function(xhr, desc, err) {
+                console.log(xhr);
+                console.log("|Details: " + desc + "|Error: " + err);
+                if (xhr['responseJSON']['error']) {
+                    notify(xhr['responseJSON']['message'],'danger', 'center');
+                }
+            }
+        });
+    }
+    leaderboard();
+</script>
 
 
 </body>

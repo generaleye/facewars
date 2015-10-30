@@ -61,6 +61,20 @@ class OauFaceWars
         }
     }
 
+    private function getDateBefore($date_id) {
+        $sql = "SELECT `date_id`, `date` FROM `dates` WHERE `date_id` < :date_id ORDER BY `date_id` DESC LIMIT 1";
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam("date_id", $date_id);
+            $stmt->execute();
+            $date = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $date;
+        } catch(PDOException $e) {
+            echo '{"error":{"text":'. $e->getMessage() .'}}';
+        }
+    }
+
+
     private function isUserInBlacklist($matricNo) {
         $sql = "SELECT `matric_no` from `whitelists` WHERE `matric_no` = :matric AND `active_status` = 1";
         try {
@@ -188,6 +202,8 @@ class OauFaceWars
     }
 
     public function rankPreviousDate($date_id) {
+        $date_before_arr = $this->getDateBefore($date_id);
+        $date_before_id = $date_before_arr['date_id'];
 
         $datetime = date("Y-m-d H:i:s", time());
         $sql = "SELECT `competitor_id`, `matric_no`, `votes`
@@ -196,7 +212,7 @@ class OauFaceWars
                 ORDER BY `votes` DESC";
         try {
             $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam("date_id", $date_id);
+            $stmt->bindParam("date_id", $date_before_id);
             $stmt->execute();
             $competitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
             //return $competitors;

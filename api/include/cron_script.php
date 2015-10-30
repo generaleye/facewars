@@ -6,7 +6,7 @@ $cron = new OauFaceWars();
 $date_id = $cron->insertDate();
 if ($date_id != NULL) {
     $competitors = $cron->generateCompetitors($date_id);
-    $cron->rankPreviousDate($date_id-1);
+    $cron->rankPreviousDate($date_id);
 } else {
     echo "Date Exists";
 }

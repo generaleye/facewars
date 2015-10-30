@@ -8224,7 +8224,7 @@ button.close {
 
 @media (max-width: 767px) {
   .hidden-xs {
-    display: none !important;
+    /*display: none !important;*/
   }
 }
 
@@ -9819,6 +9819,14 @@ body #content {
   padding: 6px 40px;
   display: block;
   font-size: 16px;
+}
+
+.header-inner .nologo a {
+    color: #fff;
+    /*text-transform: uppercase;*/
+    padding: 6px 10px;
+    display: block;
+    font-size: 16px;
 }
 
 #menu-trigger {
