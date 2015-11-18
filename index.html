@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>OAU FaceWars</title>
+
+        <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     
         <!-- Vendor CSS -->
         <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
@@ -18,98 +20,117 @@
     </head>
     
     <body class="all-content">
-        <header id="header">
-            <ul class="header-inner">
-                <!--<li id="menu-trigger" data-trigger="#sidebar"> -->
-                    <!--<div class="line-wrap">-->
-                        <!--<div class="line top"></div>-->
-                        <!--<div class="line center"></div>-->
-                        <!--<div class="line bottom"></div>-->
-                    <!--</div>-->
-                <!--</li>-->
-            
-                <li class="logo hidden-xs">
-                    <a href="index.html">OAU FaceWars</a>
-                </li>
-                
-                <li class="pull-right">
-                    <ul class="top-menu">
-                        <!--<li id="toggle-width">-->
-                            <!--<div class="toggle-switch">-->
-                                <!--<input id="tw-switch" type="checkbox" hidden="hidden">-->
-                                <!--<label for="tw-switch" class="ts-helper"></label>-->
-                            <!--</div>-->
-                        <!--</li>-->
-                        <!--<li id="top-search">-->
-                            <!--<a class="tm-search" href=""></a>-->
-                        <!--</li>-->
+        <header>
+            <!--<ul class="header-inner">-->
 
+                <!--<li class="logo hidden-xs">-->
+                    <!--<a href="index.html">OAU FaceWars</a>-->
+                <!--</li>-->
+
+                <!--<li class="pull-right">-->
+                    <!--<ul class="top-menu">-->
+
+                        <!--<li class="nologo">-->
+                            <!--<a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>-->
+                        <!--</li>-->
+                        <!--<li class="nologo">-->
+                            <!--<a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>-->
+                        <!--</li>-->
+                        <!--<li class="nologo">-->
+                            <!--<a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>-->
+                        <!--</li>-->
+                        <!--<li class="nologo">-->
+                            <!--<a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>-->
+                        <!--</li>-->
+                        <!--<li class="nologo">-->
+                            <!--<a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>-->
+                        <!--</li>-->
+                        <!--<li class="nologo">-->
+                            <!--<a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>-->
+                        <!--</li>-->
                         <!--<li class="dropdown">-->
                             <!--<a data-toggle="dropdown" class="tm-settings" href=""></a>-->
                             <!--<ul class="dropdown-menu dm-icon pull-right">-->
-                                <!--<li class="hidden-xs">-->
-                                    <!--<a data-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a>-->
+                                <!--<li>-->
+                                    <!--<a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>-->
                                 <!--</li>-->
                                 <!--<li>-->
-                                    <!--<a data-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> Clear Local Storage</a>-->
+                                    <!--<a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>-->
                                 <!--</li>-->
                                 <!--<li>-->
-                                    <!--<a href=""><i class="zmdi zmdi-face"></i> Privacy Settings</a>-->
+                                    <!--<a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>-->
                                 <!--</li>-->
                                 <!--<li>-->
-                                    <!--<a href=""><i class="zmdi zmdi-settings"></i> Other Settings</a>-->
+                                    <!--<a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>-->
                                 <!--</li>-->
                             <!--</ul>-->
                         <!--</li>-->
-                        <li class="nologo">
-                            <a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>
-                        </li>
-                        <li class="nologo">
-                            <a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>
-                        </li>
-                        <li class="nologo">
-                            <a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>
-                        </li>
-                        <li class="nologo">
-                            <a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>
-                        </li>
-                        <li class="nologo">
-                            <a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>
-                        </li>
-                        <li class="nologo">
-                            <a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>
-                        </li>
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="tm-settings" href=""></a>
-                            <ul class="dropdown-menu dm-icon pull-right">
-                                <li>
-                                    <a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>
-                                </li>
-                                <li>
-                                    <a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>
-                                </li>
-                                <li>
-                                    <a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>
-                                </li>
-                                <li>
-                                    <a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>
-                                </li>
-                                <li>
-                                    <a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>
-                                </li>
-                                <li>
-                                    <a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!--<li class="hidden-xs" id="chat-trigger" data-trigger="#chat">-->
-                            <!--<a class="tm-chat" href=""></a>-->
-                        <!--</li>-->
-                    </ul>
-                </li>
-            </ul>
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+
+            <nav id="latest-header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="./">
+                            <img src="img/facewars.png" alt="">
+                        </a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="./signin.html">Sign-In</a></li>
+                            <li><a href="./leaderboard.html">Leaderboard</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./download.html">Download</a></li>
+                        </ul>
+                    </div>
+                        <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+
+            <!--<nav id="header" class="navbar navbar-default navbar-inverse navbar-custom">-->
+                <!--<div class="container-fluid">-->
+                    <!--<!-- Brand and toggle get grouped for better mobile display -->-->
+                    <!--<div class="navbar-header">-->
+                        <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
+                            <!--<span class="sr-only">Toggle navigation</span>-->
+                            <!--<span class="icon-bar"></span>-->
+                            <!--<span class="icon-bar"></span>-->
+                            <!--<span class="icon-bar"></span>-->
+                        <!--</button>-->
+                        <!--<a class="navbar-brand" href="#"><img src="./img/facewars.png" > </a>-->
+                    <!--</div>-->
+    <!---->
+                    <!--<!-- Collect the nav links, forms, and other content for toggling -->-->
+                    <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+                        <!--<ul class="nav navbar-nav">-->
+                            <!--<li><a href="#">Link</a></li>-->
+                            <!--<li><a href="#">Link</a></li>-->
+                        <!--</ul>-->
+                        <!--<ul class="nav navbar-nav navbar-right">-->
+                            <!--<li><a href="#">Link</a></li>-->
+                        <!--</ul>-->
+                    <!--</div><!-- /.navbar-collapse -->-->
+                <!--</div><!-- /.container-fluid -->-->
+            <!--</nav>-->
 
         </header>
+
         
         <section id="main">
         
@@ -149,49 +170,8 @@
                     <div class="card">
                         <div class="lv-header-alt clearfix m-b-5">
                             <h2 id="today-date" class="lvh-label hidden-xs"></h2>
-                            
-                            <div class="lvh-search">
-                                <input type="text" placeholder="Start typing..." class="lvhs-input">
-                                
-                                <i class="lvh-search-close">&times;</i>
-                            </div>
-                            
+
                             <ul class="lv-actions actions">
-                                <li>
-                                    <a href="" class="lvh-search-trigger">
-                                        <i class="zmdi zmdi-search"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <i class="zmdi zmdi-time"></i>
-                                    </a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-                                        <i class="zmdi zmdi-sort"></i>
-                                    </a>
-                
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li>
-                                            <a href="">Last Modified</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Last Edited</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Name</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Date</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <i class="zmdi zmdi-info"></i>
-                                    </a>
-                                </li>
                                 <li class="dropdown">
                                     <a href="" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                         <i class="zmdi zmdi-more-vert"></i>
@@ -611,22 +591,24 @@
         <![endif]-->
         
         <script src="js/functions.js"></script>
+        <script src="js/constants.js"></script>
         <script src="js/demo.js"></script>
+        <script src="js/moment.js"></script>
         <script type="text/javascript">
-//            console.log(base_url);
+            console.log('Hello: '+BASE_URL);
             function index() {
-                var api_u = localStorage.getItem('oaufacewars-api-url');
+//                var api_u = localStorage.getItem('oaufacewars-api-url');
                 var token = localStorage.getItem('oaufacewars-token');
                 $.ajax({
                     type: "GET",
-                    url: api_u+"/today",
+                    url: API_URL+"/today",
                     timeout: 20000,
                     data: "token="+token,
                     success: function(data){
                         con = data;
                         //console.log(con);
                         console.log(con);
-                        $('#today-date').text(con['date']);
+                        $('#today-date').text(moment(con['date']).format("dddd, MMMM Do YYYY"));
                         var total_votes = parseInt(con['competitors'][0]['votes'])+parseInt(con['competitors'][1]['votes'])+parseInt(con['competitors'][2]['votes'])+parseInt(con['competitors'][3]['votes'])+parseInt(con['competitors'][4]['votes']);
                         $('#result').find('div.result-bar').attr('aria-valuemax', total_votes);
 

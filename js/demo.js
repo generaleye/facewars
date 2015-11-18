@@ -1,13 +1,13 @@
 $(document).ready(function(){
-    if (window.location.hostname == 'localhost') {
-        var base_url = 'http://localhost/oaufacewars/';
-    } else {
-        var base_url = 'http://oau-facewars.rhcloud.com/';
-
-    }
-    var api_url = base_url+'api/v1';
-    localStorage.setItem('oaufacewars-base-url', base_url);
-    localStorage.setItem('oaufacewars-api-url', api_url);
+    //if (window.location.hostname == 'localhost') {
+    //    var base_url = 'http://localhost/oaufacewars/';
+    //} else {
+    //    var base_url = 'http://oau-facewars.rhcloud.com/';
+    //
+    //}
+    //var api_url = base_url+'api/v1';
+    //localStorage.setItem('oaufacewars-base-url', base_url);
+    //localStorage.setItem('oaufacewars-api-url', api_url);
 
     //Welcome Message (not for login page)
     function notify(message, type, align){
@@ -40,7 +40,7 @@ $(document).ready(function(){
     function register(email,password) {
         $.ajax({
             type: "POST",
-            url: api_url+"/register",
+            url: API_URL+"/register",
             timeout: 20000,
             data: "email="+email+"&password="+password,
             success: function(data){
@@ -61,7 +61,7 @@ $(document).ready(function(){
     function login(email,password) {
         $.ajax({
             type: "POST",
-            url: api_url+"/login",
+            url: API_URL+"/login",
             timeout: 20000,
             data: "email="+email+"&password="+password,
             success: function(data){
@@ -74,7 +74,7 @@ $(document).ready(function(){
                 } else {
                     notify('Successful Login', 'success', 'center');
                     localStorage.setItem('oaufacewars-token', con['token']);
-                    $(location).attr('href', base_url);
+                    $(location).attr('href', BASE_URL);
                 }
             },
             error: function(xhr, desc, err) {
@@ -91,7 +91,7 @@ $(document).ready(function(){
     function verify(email,code) {
         $.ajax({
             type: "POST",
-            url: api_url+"/verify",
+            url: API_URL+"/verify",
             timeout: 20000,
             data: "email="+email+"&code="+code,
             success: function(data){
@@ -119,7 +119,7 @@ $(document).ready(function(){
     function vote(competitor_id, token) {
         $.ajax({
             type: "POST",
-            url: api_url+"/vote",
+            url: API_URL+"/vote",
             timeout: 20000,
             data: "competitor_id="+competitor_id+"&token="+token,
             success: function(data){

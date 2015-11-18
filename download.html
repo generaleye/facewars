@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OAU FaceWars</title>
 
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+
     <!-- Vendor CSS -->
     <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
     <link href="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
@@ -18,41 +20,70 @@
 </head>
 
 <body class="all-content">
-<header id="header">
-    <ul class="header-inner">
+<header>
 
-        <li class="logo hidden-xs">
-            <a href="index.html">OAU FaceWars</a>
-        </li>
+    <nav id="latest-header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./">
+                    <img src="img/facewars.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./signin.html">Sign-In</a></li>
+                    <li><a href="./leaderboard.html">Leaderboard</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./download.html">Download</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-        <li class="pull-right">
-            <ul class="top-menu">
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="tm-settings" href=""></a>
-                    <ul class="dropdown-menu dm-icon pull-right">
-                        <li>
-                            <a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>
-                        </li>
-                        <li>
-                            <a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>
-                        </li>
-                        <li>
-                            <a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>
-                        </li>
-                        <li>
-                            <a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>
-                        </li>
-                        <li>
-                            <a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>
-                        </li>
-                        <li>
-                            <a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <!--<ul class="header-inner">-->
+
+        <!--<li class="logo hidden-xs">-->
+            <!--<a href="index.html">OAU FaceWars</a>-->
+        <!--</li>-->
+
+        <!--<li class="pull-right">-->
+            <!--<ul class="top-menu">-->
+                <!--<li class="dropdown">-->
+                    <!--<a data-toggle="dropdown" class="tm-settings" href=""></a>-->
+                    <!--<ul class="dropdown-menu dm-icon pull-right">-->
+                        <!--<li>-->
+                            <!--<a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</li>-->
+    <!--</ul>-->
 </header>
 
 <section id="main">
