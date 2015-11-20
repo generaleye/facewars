@@ -84,7 +84,9 @@ CREATE TABLE IF NOT EXISTS `comments` (
 
 CREATE TABLE IF NOT EXISTS `messages` (
   `message_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` INT UNSIGNED NOT NULL,
+  `user_id` INT UNSIGNED NULL,
+  `user_name` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
   `message` TEXT NOT NULL,
   `created_time` DATETIME NOT NULL,
   `active_status` TINYINT(1) UNSIGNED NOT NULL DEFAULT 1,

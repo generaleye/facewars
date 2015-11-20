@@ -389,8 +389,8 @@ class DbHandler
         }
     }
 
-    public function getTenDatesBelow($date_id) {
-        $sql = "SELECT `date_id`, `date` FROM `dates` WHERE `date_id` < :date_id ORDER BY `date_id` DESC LIMIT 10";
+    public function getFiveDatesBelow($date_id) {
+        $sql = "SELECT `date_id`, `date` FROM `dates` WHERE `date_id` < :date_id ORDER BY `date_id` DESC LIMIT 5";
         try {
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam("date_id", $date_id);
@@ -447,13 +447,15 @@ class DbHandler
         }
     }
 
-    public function contactUs($user_id,$message) {
+    public function contactUs($user_id, $name, $email, $message) {
         $datetime = date("Y-m-d H:i:s", time());
-        $sql = "INSERT INTO messages (`user_id`, `message`, `created_time`)
-                VALUES (:user_id, :message, :time_posted)";
+        $sql = "INSERT INTO messages (`user_id`, `user_name`, `email`, `message`, `created_time`)
+                VALUES (:user_id, :user_name, :email, :message, :time_posted)";
         try {
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam("user_id", $user_id);
+            $stmt->bindParam("user_name", $name);
+            $stmt->bindParam("email", $email);
             $stmt->bindParam("message", $message);
             $stmt->bindParam("time_posted", $datetime);
             $stmt->execute();

@@ -21,59 +21,6 @@
     
     <body class="all-content">
         <header>
-            <!--<ul class="header-inner">-->
-
-                <!--<li class="logo hidden-xs">-->
-                    <!--<a href="index.html">OAU FaceWars</a>-->
-                <!--</li>-->
-
-                <!--<li class="pull-right">-->
-                    <!--<ul class="top-menu">-->
-
-                        <!--<li class="nologo">-->
-                            <!--<a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>-->
-                        <!--</li>-->
-                        <!--<li class="nologo">-->
-                            <!--<a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>-->
-                        <!--</li>-->
-                        <!--<li class="nologo">-->
-                            <!--<a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>-->
-                        <!--</li>-->
-                        <!--<li class="nologo">-->
-                            <!--<a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>-->
-                        <!--</li>-->
-                        <!--<li class="nologo">-->
-                            <!--<a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>-->
-                        <!--</li>-->
-                        <!--<li class="nologo">-->
-                            <!--<a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>-->
-                        <!--</li>-->
-                        <!--<li class="dropdown">-->
-                            <!--<a data-toggle="dropdown" class="tm-settings" href=""></a>-->
-                            <!--<ul class="dropdown-menu dm-icon pull-right">-->
-                                <!--<li>-->
-                                    <!--<a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>-->
-                                <!--</li>-->
-                            <!--</ul>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</li>-->
-            <!--</ul>-->
 
             <nav id="latest-header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="container">
@@ -92,7 +39,8 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="./signin.html">Sign-In</a></li>
+                            <li id="sign-in"><a href="./signin.html">Sign-In</a></li>
+                            <li id="sign-out"><a data-action="clear-localstorage" href="">Sign-Out</a></li>
                             <li><a href="./leaderboard.html">Leaderboard</a></li>
                             <li><a href="./contact.html">Contact</a></li>
                             <li><a href="./download.html">Download</a></li>
@@ -103,32 +51,6 @@
                 <!-- /.container -->
             </nav>
 
-            <!--<nav id="header" class="navbar navbar-default navbar-inverse navbar-custom">-->
-                <!--<div class="container-fluid">-->
-                    <!--<!-- Brand and toggle get grouped for better mobile display -->-->
-                    <!--<div class="navbar-header">-->
-                        <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
-                            <!--<span class="sr-only">Toggle navigation</span>-->
-                            <!--<span class="icon-bar"></span>-->
-                            <!--<span class="icon-bar"></span>-->
-                            <!--<span class="icon-bar"></span>-->
-                        <!--</button>-->
-                        <!--<a class="navbar-brand" href="#"><img src="./img/facewars.png" > </a>-->
-                    <!--</div>-->
-    <!---->
-                    <!--<!-- Collect the nav links, forms, and other content for toggling -->-->
-                    <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
-                        <!--<ul class="nav navbar-nav">-->
-                            <!--<li><a href="#">Link</a></li>-->
-                            <!--<li><a href="#">Link</a></li>-->
-                        <!--</ul>-->
-                        <!--<ul class="nav navbar-nav navbar-right">-->
-                            <!--<li><a href="#">Link</a></li>-->
-                        <!--</ul>-->
-                    <!--</div><!-- /.navbar-collapse -->-->
-                <!--</div><!-- /.container-fluid -->-->
-            <!--</nav>-->
-
         </header>
 
         
@@ -138,34 +60,6 @@
             <section id="content">
 
                 <div class="container">
-
-                    <!--<div class="block-header">-->
-                        <!--<h2>Contacts<small>Manage your contact information</small></h2>-->
-                <!---->
-                        <!--<ul class="actions m-t-20 hidden-xs">-->
-                            <!--<li class="dropdown">-->
-                                <!--<a href="" data-toggle="dropdown">-->
-                                    <!--<i class="zmdi zmdi-more-vert"></i>-->
-                                <!--</a>-->
-                <!---->
-                                <!--<ul class="dropdown-menu dropdown-menu-right">-->
-                                    <!--<li>-->
-                                        <!--<a href="">Privacy Settings</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a href="">Account Settings</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a href="">Other Settings</a>-->
-                                    <!--</li>-->
-                                <!--</ul>-->
-                            <!--</li>-->
-                        <!--</ul>-->
-                    <!--</div>-->
-                    
-                    <!-- Add button -->
-                    <!--<button class="btn btn-float btn-danger m-btn"><i class="zmdi zmdi-plus"></i></button>-->
-                
                     
                     <div class="card">
                         <div class="lv-header-alt clearfix m-b-5">
@@ -180,9 +74,6 @@
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li>
                                             <a href="">Refresh</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Settings</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -208,7 +99,6 @@
                 
                                         <div class="c-footer">
                                             <button class="btn btn-primary waves-effect vote">Vote</button>
-                                            <!--<button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Vote</button>-->
                                         </div>
                                     </div>
                                 </div>
@@ -285,20 +175,15 @@
                                     </div>
                                 </div>
 
-
-                
                             </div>
 
-                            <!--<div class="load-more">-->
-                                <!--<a href=""><i class="zmdi zmdi-refresh-alt"></i> Load More...</a>-->
-                            <!--</div>-->
                         </div>
-                        <div class="wall-comment-list">
-                            <!--<div class="wcl-list">-->
+                        <!--<div class="wall-comment-list">-->
+                            <!--&lt;!&ndash;<div class="wcl-list">&ndash;&gt;-->
 
-                            <!--</div>-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                        </div>
+                        <!--</div>-->
                         <div class="wall-comment-list">
 
                             <!-- Comment Listing -->
@@ -313,16 +198,6 @@
                                                     <div class="m-t-5">
                                                         Results
                                                     </div>
-
-                                                    <!--<div class="clearfix"></div>-->
-
-                                                    <!--<div class="rl-star">-->
-                                                        <!--<i class="zmdi zmdi-star active"></i>-->
-                                                        <!--<i class="zmdi zmdi-star active"></i>-->
-                                                        <!--<i class="zmdi zmdi-star active"></i>-->
-                                                        <!--<i class="zmdi zmdi-star"></i>-->
-                                                        <!--<i class="zmdi zmdi-star"></i>-->
-                                                    <!--</div>-->
                                                 </div>
 
                                                 <div class="lv-body">
@@ -422,7 +297,7 @@
                                         <!-- Social -->
                                         <div class="card go-social">
                                             <div class="card-header">
-                                                <h2>Social with us</h2>
+                                                <h2>Social with us<small>Follow us to get more updates</small></h2>
                                                 <!--<h2>Social with us <small>Nunc sit amet dapibus tellus</small></h2>-->
                                             </div>
 
@@ -444,72 +319,10 @@
                                         </div>
                                     </div>
 
-                                    <!--<a href="" class="pull-left">-->
-                                        <!--<img src="img/profile-pics/5.jpg" alt="" class="lv-img-sm">-->
-                                    <!--</a>-->
-
-                                    <!--<div class="pull-right p-0">-->
-                                        <!--<ul class="actions">-->
-                                            <!--<li class="dropdown" dropdown="">-->
-                                                <!--<a href="" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">-->
-                                                    <!--<i class="zmdi zmdi-more-vert"></i>-->
-                                                <!--</a>-->
-
-                                                <!--<ul class="dropdown-menu dropdown-menu-right">-->
-                                                    <!--<li>-->
-                                                        <!--<a href="">Report</a>-->
-                                                    <!--</li>-->
-                                                    <!--<li>-->
-                                                        <!--<a href="">Delete</a>-->
-                                                    <!--</li>-->
-                                                <!--</ul>-->
-                                            <!--</li>-->
-                                        <!--</ul>-->
-                                    <!--</div>-->
-
-                                    <!--<div class="media-body">-->
-                                        <!--<a href="" class="a-title">David Nathan</a> <small class="c-gray m-l-10">3 mins ago...</small>-->
-                                        <!--<p class="m-t-5 m-b-0">Maecenas dignissim in neque id commodo. Nam pretium a tortor a convallis. Curabitur in arcu quis nulla aliquam condimentum. Morbi eu cursus diam, vitae tristique dui.</p>-->
-                                    <!--</div>-->
                                 </div>
 
-                                <!--<div class="media">-->
-                                    <!--<a href="" class="pull-left">-->
-                                        <!--<img src="img/profile-pics/4.jpg" alt="" class="lv-img-sm">-->
-                                    <!--</a>-->
-
-                                    <!--<div class="media-body">-->
-                                        <!--<a href="" class="a-title">Sam Anderson</a> <small class="c-gray m-l-10">3 mins ago...</small>-->
-                                        <!--<p class="m-t-5 m-b-0">Curabitur in arcu quis nulla aliquam condimentum.</p>-->
-                                    <!--</div>-->
-
-                                    <!--<ul class="actions">-->
-                                        <!--<li class="dropdown" dropdown="">-->
-                                            <!--<a href="" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">-->
-                                                <!--<i class="zmdi zmdi-more-vert"></i>-->
-                                            <!--</a>-->
-
-                                            <!--<ul class="dropdown-menu dropdown-menu-right">-->
-                                                <!--<li>-->
-                                                    <!--<a href="">Report</a>-->
-                                                <!--</li>-->
-                                                <!--<li>-->
-                                                    <!--<a href="">Delete</a>-->
-                                                <!--</li>-->
-                                            <!--</ul>-->
-                                        <!--</li>-->
-                                    <!--</ul>-->
-                                <!--</div>-->
                             </div>
 
-                            <!-- Comment form -->
-                            <!--<div class="wcl-form">-->
-                                <!--<div class="wc-comment">-->
-                                    <!--<div class="wcc-inner wcc-toggle">-->
-                                        <!--Write Something...-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
                         </div>
 
 
@@ -521,13 +334,12 @@
         
         <footer id="footer">
             Copyright &copy; 2015 OAU FaceWars
-            
+
             <ul class="f-menu">
-                <li><a href="">Home</a></li>
-                <li><a href="">Dashboard</a></li>
-                <li><a href="">Reports</a></li>
-                <li><a href="">Support</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="./">Home</a></li>
+                <li><a href="./leaderboard.html">Leaderboard</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./download.html">Download</a></li>
             </ul>
         </footer>
 

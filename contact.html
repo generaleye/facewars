@@ -73,7 +73,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./signin.html">Sign-In</a></li>
+                    <li id="sign-in"><a href="./signin.html">Sign-In</a></li>
+                    <li id="sign-out"><a data-action="clear-localstorage" href="">Sign-Out</a></li>
                     <li><a href="./leaderboard.html">Leaderboard</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                     <li><a href="./download.html">Download</a></li>
@@ -201,34 +202,26 @@
 
             <div class="form-group fg-float">
                 <div class="fg-line">
-                    <input type="email" class="form-control fg-input">
+                    <input id="contact-name" type="text" class="form-control fg-input" required>
                 </div>
                 <label class="fg-label">Name</label>
             </div>
 
             <div class="form-group fg-float">
                 <div class="fg-line">
-                    <input type="email" class="form-control">
+                    <input id="contact-email" type="email" class="form-control" required>
                 </div>
                 <label class="fg-label">Email address</label>
             </div>
 
             <div class="form-group fg-float">
                 <div class="fg-line">
-                    <input type="email" class="form-control">
-                </div>
-                <label class="fg-label">Contact Number</label>
-            </div>
-
-            <div class="form-group fg-float">
-                <div class="fg-line">
-                    <textarea class="form-control"></textarea>
+                    <textarea id="contact-message" class="form-control"></textarea>
                 </div>
                 <label class="fg-label">Message</label>
             </div>
 
-            <button class="btn btn-info">Submit</button>
-            <button class="btn btn-link">Cancel</button>
+            <button id="contact-us" class="btn btn-info">Submit</button>
         </div>
 
     </div></div>
@@ -242,11 +235,10 @@
     Copyright &copy; 2015 OAU FaceWars
 
     <ul class="f-menu">
-        <li><a href="">Home</a></li>
-        <li><a href="">Dashboard</a></li>
-        <li><a href="">Reports</a></li>
-        <li><a href="">Support</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="./leaderboard.html">Leaderboard</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./download.html">Download</a></li>
     </ul>
 </footer>
 
@@ -310,6 +302,7 @@
 <![endif]-->
 
 <script src="js/functions.js"></script>
+<script src="js/constants.js"></script>
 <script src="js/demo.js"></script>
 
 

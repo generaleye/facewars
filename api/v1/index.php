@@ -218,7 +218,7 @@ $app->post('/vote', 'authenticate', 'vote');
 $app->get('/shuffle', 'shuffleImg');
 $app->post('/comment', 'authenticate', 'postComment');
 $app->get('/comment', 'getComment');
-$app->post('/contact', 'authenticate', 'contactUs');
+$app->post('/contact', 'contactUs');
 
 
 $app->run();
@@ -324,7 +324,7 @@ function leaderboard() {
         $dateId = $marker;
     }
     if ($dateId != NULL) {
-        $dateArr = $db->getTenDatesBelow($dateId);
+        $dateArr = $db->getFiveDatesBelow($dateId);
         for ($i=0; $i<count($dateArr); $i++) {
             if (isset($token)) {
                 $tox = $db->getUserByToken($token);
@@ -532,30 +532,32 @@ function getComment() {
 
 function contactUs() {
     $app = \Slim\Slim::getInstance();
-    verifyRequiredParams(array('message'));
+    verifyRequiredParams(array('name', 'email','message'));
     $req = $app->request(); // Getting parameters
     $token = $req->params('token');
+    $name = $req->params('name');
+    $email = $req->params('email');
     $message = $req->params('message');
 
     //Get current date
     //$date = date("Y-m-d", time());
     //$date = '2015-06-11';
     $db = new DBHandler();
-    $tox = $db->getUserByToken($token);
-    $userId = $tox['user_id'];
+//    $tox = $db->getUserByToken($token);
+//    $userId = $tox['user_id'];
     $response = array();
 
     
 
-//    if (isset ($token)) {
-//        $tox = $db->getUserByToken($token);
-//        $userId = $tox['user_id'];
-//    } else {
-//        $userId = "";
-//    }
+    if (isset ($token)) {
+        $tox = $db->getUserByToken($token);
+        $userId = $tox['user_id'];
+    } else {
+        $userId = "";
+    }
 
 
-    $message_id = $db->contactUs($userId,$message);
+    $message_id = $db->contactUs($userId, $name, $email,$message);
     if ($message_id != NULL) {
         $response['error'] = FALSE;
         $response['contact_id'] = $message_id;

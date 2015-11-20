@@ -1,4 +1,14 @@
 $(document).ready(function(){
+
+    //Get saved layout type from LocalStorage
+    var token = localStorage.getItem('oaufacewars-token');
+    if (token !== null) {
+//                    $(location).attr('href', BASE_URL);
+        $('#sign-in').attr('style', 'display: none');
+    } else {
+        $('#sign-out').attr('style', 'display: none');
+    }
+
     //if (window.location.hostname == 'localhost') {
     //    var base_url = 'http://localhost/oaufacewars/';
     //} else {
@@ -24,8 +34,8 @@ $(document).ready(function(){
             },
             delay: 2500,
             animate: {
-                    enter: 'animated bounceIn',
-                    exit: 'animated bounceOut'
+                enter: 'animated bounceIn',
+                exit: 'animated bounceOut'
             },
             offset: {
                 x: 20,
@@ -145,6 +155,39 @@ $(document).ready(function(){
         });
     }
 
+    function contact(token,name,email,message) {
+        $.ajax({
+            type: "POST",
+            url: API_URL+"/contact",
+            timeout: 20000,
+            data: "token="+token+"&name="+name+"&email="+email+"&message="+message,
+            success: function(data){
+                con = data;
+                //console.log(con);
+                //$("tbody#tablespace").html(con);
+                console.log(con);
+                if (con['error']) {
+                    notify(con['message'],'danger', 'center');
+                } else {
+                    //notify(con['message'],'success', 'center');
+                    swal("Thank you!!", "Your message has been posted successfully", "success");
+                    $('body').find('#contact-name').val("");
+                    $('body').find('#contact-email').val("");
+                    $('body').find('#contact-message').val("");
+                }
+            },
+            error: function(xhr, desc, err) {
+                console.log(xhr['responseJSON']['message']);
+                //console.log("|Details: " + desc + "|Error: " + err);
+                if (xhr['responseJSON']['error']) {
+                    notify(xhr['responseJSON']['message'],'danger', 'center');
+                }
+
+            }
+        });
+    }
+
+
 
     $('body').on('click', '#register', function(e){
         e.preventDefault();
@@ -214,6 +257,21 @@ $(document).ready(function(){
 
         notify('ok o', 'success', 'center');
         $('body').find('#today-date').text('trstt');
+    });
+
+    $('body').on('click', '#contact-us', function(e){
+        e.preventDefault();
+        //$(this).parent().addClass('toggled');
+        var token = localStorage.getItem('oaufacewars-token');
+        var name = $('body').find('#contact-name').val();
+        var email = $('body').find('#contact-email').val();
+        var message = $('body').find('#contact-message').val();
+        if (name !== '' && email !== '' && message !== '') {
+            contact(token,name,email,message);
+
+        } else {
+            notify('Fields not set', 'danger', 'center');
+        }
     });
 
 });

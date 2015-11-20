@@ -763,15 +763,16 @@ $(document).ready(function(){
             
             swal({   
                 title: "Are you sure?",   
-                text: "All your saved localStorage values will be removed",   
+                text: "",
                 type: "warning",   
                 showCancelButton: true,   
                 confirmButtonColor: "#DD6B55",   
-                confirmButtonText: "Yes, delete it!",   
+                confirmButtonText: "Yes!",
                 closeOnConfirm: false 
             }, function(){
                 localStorage.clear();
-                swal("Done!", "localStorage is cleared", "success"); 
+                swal("Done!", "You have been logged out", "success");
+                $(location).attr('href', BASE_URL)
             });
         });
     }

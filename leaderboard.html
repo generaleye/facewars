@@ -39,7 +39,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./signin.html">Sign-In</a></li>
+                    <li id="sign-in"><a href="./signin.html">Sign-In</a></li>
+                    <li id="sign-out"><a data-action="clear-localstorage" href="">Sign-Out</a></li>
                     <li><a href="./leaderboard.html">Leaderboard</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                     <li><a href="./download.html">Download</a></li>
@@ -93,80 +94,12 @@
 
 <div class="container">
 
-    <!--<div class="block-header">-->
-    <!--<h2>Contacts<small>Manage your contact information</small></h2>-->
-    <!---->
-    <!--<ul class="actions m-t-20 hidden-xs">-->
-    <!--<li class="dropdown">-->
-    <!--<a href="" data-toggle="dropdown">-->
-    <!--<i class="zmdi zmdi-more-vert"></i>-->
-    <!--</a>-->
-    <!---->
-    <!--<ul class="dropdown-menu dropdown-menu-right">-->
-    <!--<li>-->
-    <!--<a href="">Privacy Settings</a>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--<a href="">Account Settings</a>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--<a href="">Other Settings</a>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-
-    <!-- Add button -->
-    <!--<button class="btn btn-float btn-danger m-btn"><i class="zmdi zmdi-plus"></i></button>-->
-
-
     <div class="card">
         <div class="lv-header-alt clearfix m-b-5">
             <h2 class="lvh-label hidden-xs">Leaderboard</h2>
 
-            <div class="lvh-search">
-                <input type="text" placeholder="Start typing..." class="lvhs-input">
-
-                <i class="lvh-search-close">&times;</i>
-            </div>
-
             <ul class="lv-actions actions">
-                <li>
-                    <a href="" class="lvh-search-trigger">
-                        <i class="zmdi zmdi-search"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-time"></i>
-                    </a>
-                </li>
-                <li class="dropdown">
-                    <a href="" data-toggle="dropdown"="" aria-expanded="false" aria-haspopup="true">
-                    <i class="zmdi zmdi-sort"></i>
-                    </a>
 
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li>
-                            <a href="">Last Modified</a>
-                        </li>
-                        <li>
-                            <a href="">Last Edited</a>
-                        </li>
-                        <li>
-                            <a href="">Name</a>
-                        </li>
-                        <li>
-                            <a href="">Date</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-info"></i>
-                    </a>
-                </li>
                 <li class="dropdown">
                     <a href="" data-toggle="dropdown"="" aria-expanded="false" aria-haspopup="true">
                     <i class="zmdi zmdi-more-vert"></i>
@@ -186,86 +119,7 @@
 
         <div id="leaderboard-body" class="card-body card-padding">
             <div id="test">
-                <!--<div class="p-timeline">-->
-                    <!--<div class="pt-line c-gray text-right">-->
-                        <!--<span class="d-block">2015</span>-->
-                        <!--05/08-->
-                    <!--</div>-->
 
-                    <!--<div class="pt-body">-->
-                        <!--<h2 class="ptb-title">5th of August 2015</h2>-->
-
-                        <!--<div class="contacts clearfix row">-->
-                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                                <!--<div class="c-item">-->
-                                    <!--<a class="ci-avatar lightbox">-->
-                                        <!--<div data-src="img/contacts/1.jpg" class="lightbox-item">-->
-                                            <!--<img src="img/contacts/1.jpg" alt="">-->
-                                        <!--</div>-->
-
-                                    <!--</a>-->
-                                <!--</div>-->
-                                <!--<div class="c-info">-->
-                                    <!--<strong>1</strong>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                                <!--<div class="c-item">-->
-                                    <!--<a class="ci-avatar lightbox">-->
-                                        <!--<div data-src="img/contacts/2.jpg" class="lightbox-item">-->
-                                            <!--<img src="img/contacts/2.jpg" alt="">-->
-                                        <!--</div>-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                                <!--<div class="c-info">-->
-                                    <!--<strong>2</strong>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                                <!--<div class="c-item">-->
-                                    <!--<a class="ci-avatar lightbox">-->
-                                        <!--<div data-src="img/contacts/3.jpg" class="lightbox-item">-->
-                                            <!--<img src="img/contacts/3.jpg" alt="">-->
-                                        <!--</div>-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                                <!--<div class="c-info">-->
-                                    <!--<strong>3</strong>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                                <!--<div class="c-item">-->
-                                    <!--<a class="ci-avatar lightbox">-->
-                                        <!--<div data-src="img/contacts/4.jpg" class="lightbox-item">-->
-                                            <!--<img src="img/contacts/4.jpg" alt="">-->
-                                        <!--</div>-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                                <!--<div class="c-info">-->
-                                    <!--<strong>4</strong>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                            <!--<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">-->
-                                <!--<div class="c-item">-->
-                                    <!--<a class="ci-avatar lightbox">-->
-                                        <!--<div data-src="img/contacts/5.jpg" class="lightbox-item">-->
-                                            <!--<img src="img/contacts/5.jpg" alt="">-->
-                                        <!--</div>-->
-                                    <!--</a>-->
-                                <!--</div>-->
-                                <!--<div class="c-info">-->
-                                    <!--<strong>5</strong>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-                    <!--</div>-->
-
-                <!--</div>-->
             </div>
 
 
@@ -273,7 +127,7 @@
             <div class="clearfix"></div>
 
             <div class="load-more">
-                <a href=""><i class="zmdi zmdi-refresh-alt"></i> Load More...</a>
+                <a id="load-more" href=""><i class="zmdi zmdi-refresh-alt"></i> Load More...</a>
             </div>
         </div>
     </div>
@@ -286,11 +140,10 @@
     Copyright &copy; 2015 OAU FaceWars
 
     <ul class="f-menu">
-        <li><a href="">Home</a></li>
-        <li><a href="">Dashboard</a></li>
-        <li><a href="">Reports</a></li>
-        <li><a href="">Support</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="./leaderboard.html">Leaderboard</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./download.html">Download</a></li>
     </ul>
 </footer>
 
@@ -354,16 +207,16 @@
 <![endif]-->
 
 <script src="js/functions.js"></script>
+<script src="js/constants.js"></script>
 <script src="js/demo.js"></script>
 <script src="js/moment.js"></script>
 <script type="text/javascript">
     //            console.log(base_url);
     function leaderboard() {
-        var api_u = localStorage.getItem('oaufacewars-api-url');
         var token = localStorage.getItem('oaufacewars-token');
         $.ajax({
             type: "GET",
-            url: api_u+"/leaderboard",
+            url: API_URL+"/leaderboard",
             timeout: 20000,
             data: "token="+token,
             success: function(data){
@@ -392,14 +245,14 @@
                             '</div>'+
                             '<div class="pt-body">'+
                             '<h2 class="ptb-title">'+moment(arr['date']).format("dddd, MMMM Do YYYY")+'</h2>';
-                    for (j = 0; j < 5; j++) {
+                    for (j = 0; j < 3; j++) {
                         var latest = ''+
                                 '<div class="contacts clearfix row">'+
-                                '<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">'+
+                                '<div class="col-md-4 col-sm-4 col-xs-12 z-depth-1-bottom">'+
                                 '<div class="c-item">'+
                                 '<a class="ci-avatar lightbox">'+
                                 '<div data-src="'+arr['competitors'][j]['img_url']+'" class="lightbox-item">'+
-                                '<img src="'+arr['competitors'][j]['img_url']+'" alt="">'+
+                                '<img src="'+arr['competitors'][j]['img_url']+'" alt="" height="70px" width="70px">'+
                                 '</div>'+
                                 '</a>'+
                                 '</div>'+

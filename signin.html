@@ -50,40 +50,6 @@
         <!-- /.container -->
     </nav>
 
-    <!--<ul class="header-inner">-->
-
-        <!--<li class="logo hidden-xs">-->
-            <!--<a href="index.html">OAU FaceWars</a>-->
-        <!--</li>-->
-
-        <!--<li class="pull-right">-->
-            <!--<ul class="top-menu">-->
-                <!--<li class="dropdown">-->
-                    <!--<a data-toggle="dropdown" class="tm-settings" href=""></a>-->
-                    <!--<ul class="dropdown-menu dm-icon pull-right">-->
-                        <!--<li>-->
-                            <!--<a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</li>-->
-    <!--</ul>-->
 </header>
 
 <section id="main">
@@ -97,7 +63,7 @@
         <div class="input-group m-b-20">
             <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
             <div class="fg-line">
-                <input id="login-email" type="text" class="form-control" placeholder="Email Address" required="true">
+                <input id="login-email" type="email" class="form-control" placeholder="Email Address" required="true" aria-autocomplete="true">
             </div>
         </div>
 
@@ -110,14 +76,6 @@
 
         <div class="clearfix"></div>
 
-        <!--<div class="checkbox">-->
-            <!--<label>-->
-                <!--<input type="checkbox" value="">-->
-                <!--<i class="input-helper"></i>-->
-                <!--Keep me signed in-->
-            <!--</label>-->
-        <!--</div>-->
-
         <a href="" id="login" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
 
         <ul class="login-navigation">
@@ -129,12 +87,6 @@
 
     <!-- Register -->
     <div class="lc-block" id="l-register">
-        <!--<div class="input-group m-b-20">-->
-            <!--<span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>-->
-            <!--<div class="fg-line">-->
-                <!--<input type="text" class="form-control" placeholder="Username">-->
-            <!--</div>-->
-        <!--</div>-->
         <h4>Register</h4>
 
         <div class="input-group m-b-20">
@@ -157,16 +109,6 @@
                 <input id="register-password-check" type="password" class="form-control" placeholder="Confirm Password">
             </div>
         </div>
-
-        <!--<div class="clearfix"></div>-->
-
-        <!--<div class="checkbox">-->
-            <!--<label>-->
-                <!--<input type="checkbox" value="">-->
-                <!--<i class="input-helper"></i>-->
-                <!--Accept the license agreement-->
-            <!--</label>-->
-        <!--</div>-->
 
         <a href="" id="register" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
 
@@ -230,11 +172,10 @@
     Copyright &copy; 2015 OAU FaceWars
 
     <ul class="f-menu">
-        <li><a href="">Home</a></li>
-        <li><a href="">Dashboard</a></li>
-        <li><a href="">Reports</a></li>
-        <li><a href="">Support</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="./leaderboard.html">Leaderboard</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./download.html">Download</a></li>
     </ul>
 </footer>
 
