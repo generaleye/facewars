@@ -20,264 +20,265 @@
 </head>
 
 <body class="all-content light-gallery">
-<header>
+    <header>
 
-    <nav id="latest-header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./">
-                    <img src="img/facewars.png" alt="">
-                </a>
+        <nav id="latest-header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./">
+                        <img src="img/facewars.png" alt="">
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="sign-in"><a href="./signin.html">Sign-In</a></li>
+                        <li id="sign-out"><a data-action="clear-localstorage" href="">Sign-Out</a></li>
+                        <li><a href="./leaderboard.html">Leaderboard</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./download.html">Download</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li id="sign-in"><a href="./signin.html">Sign-In</a></li>
-                    <li id="sign-out"><a data-action="clear-localstorage" href="">Sign-Out</a></li>
-                    <li><a href="./leaderboard.html">Leaderboard</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                    <li><a href="./download.html">Download</a></li>
+            <!-- /.container -->
+        </nav>
+
+
+    </header>
+
+    <section id="main">
+
+
+    <section id="content">
+
+    <div class="container">
+
+        <div class="card">
+            <div class="lv-header-alt clearfix m-b-5">
+                <h2 class="lvh-label hidden-xs">Leaderboard</h2>
+
+                <ul class="lv-actions actions">
+
+                    <li class="dropdown">
+                        <a href="" data-toggle="dropdown"="" aria-expanded="false" aria-haspopup="true">
+                        <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">Refresh</a>
+                            </li>
+                            <li>
+                                <a href="">Settings</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+
+            <div id="leaderboard-body" class="card-body card-padding">
+                <div id="test">
+
+                </div>
+
+
+
+                <div class="clearfix"></div>
+
+                <div class="load-more">
+                    <a id="load-more" href=""><i class="zmdi zmdi-refresh-alt"></i> Load More...</a>
+                </div>
+            </div>
         </div>
-        <!-- /.container -->
-    </nav>
+    </div>
 
+    </section>
+    </section>
 
-</header>
+    <footer id="footer">
+        Copyright &copy; 2015 OAU FaceWars
 
-<section id="main">
+        <ul class="f-menu">
+            <li><a href="./">Home</a></li>
+            <li><a href="./leaderboard.html">Leaderboard</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./download.html">Download</a></li>
+        </ul>
+    </footer>
 
-
-<section id="content">
-
-<div class="container">
-
-    <div class="card">
-        <div class="lv-header-alt clearfix m-b-5">
-            <h2 class="lvh-label hidden-xs">Leaderboard</h2>
-
-            <ul class="lv-actions actions">
-
-                <li class="dropdown">
-                    <a href="" data-toggle="dropdown"="" aria-expanded="false" aria-haspopup="true">
-                    <i class="zmdi zmdi-more-vert"></i>
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+    <div class="ie-warning">
+        <h1 class="c-white">Warning!!</h1>
+        <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+        <div class="iew-container">
+            <ul class="iew-download">
+                <li>
+                    <a href="http://www.google.com/chrome/">
+                        <img src="img/browsers/chrome.png" alt="">
+                        <div>Chrome</div>
                     </a>
-
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li>
-                            <a href="">Refresh</a>
-                        </li>
-                        <li>
-                            <a href="">Settings</a>
-                        </li>
-                    </ul>
+                </li>
+                <li>
+                    <a href="https://www.mozilla.org/en-US/firefox/new/">
+                        <img src="img/browsers/firefox.png" alt="">
+                        <div>Firefox</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.opera.com">
+                        <img src="img/browsers/opera.png" alt="">
+                        <div>Opera</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.apple.com/safari/">
+                        <img src="img/browsers/safari.png" alt="">
+                        <div>Safari</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                        <img src="img/browsers/ie.png" alt="">
+                        <div>IE (New)</div>
+                    </a>
                 </li>
             </ul>
         </div>
-
-        <div id="leaderboard-body" class="card-body card-padding">
-            <div id="test">
-
-            </div>
-
-
-
-            <div class="clearfix"></div>
-
-            <div class="load-more">
-                <a id="load-more" href=""><i class="zmdi zmdi-refresh-alt"></i> Load More...</a>
-            </div>
-        </div>
+        <p>Sorry for the inconvenience!</p>
     </div>
-</div>
-
-</section>
-</section>
-
-<footer id="footer">
-    Copyright &copy; 2015 OAU FaceWars
-
-    <ul class="f-menu">
-        <li><a href="./">Home</a></li>
-        <li><a href="./leaderboard.html">Leaderboard</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./download.html">Download</a></li>
-    </ul>
-</footer>
-
-<!-- Older IE warning message -->
-<!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1 class="c-white">Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="img/browsers/chrome.png" alt="">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="img/browsers/firefox.png" alt="">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="img/browsers/opera.png" alt="">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="img/browsers/safari.png" alt="">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="img/browsers/ie.png" alt="">
-                    <div>IE (New)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
+    <![endif]-->
 
 
-<!-- Javascript Libraries -->
-<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Javascript Libraries -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<script src="vendors/bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
-<script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
-<script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-<script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
-<script src="vendors/bower_components/lightgallery/light-gallery/js/lightGallery.min.js"></script>
+    <script src="vendors/bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+    <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+    <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+    <script src="vendors/bower_components/lightgallery/light-gallery/js/lightGallery.min.js"></script>
 
-<!-- Placeholder for IE9 -->
-<!--[if IE 9 ]>
-<script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
-<![endif]-->
+    <!-- Placeholder for IE9 -->
+    <!--[if IE 9 ]>
+    <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
 
-<script src="js/functions.js"></script>
-<script src="js/constants.js"></script>
-<script src="js/demo.js"></script>
-<script src="js/moment.js"></script>
-<script type="text/javascript">
-    function appender(arr) {
+    <script src="js/functions.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/moment.js"></script>
+    <script type="text/javascript">
+        function appender(arr) {
 
-        var content_str = ''+
-                '<div id="" class="p-timeline">'+
-                '<div class="pt-line c-gray text-right">'+
-                '<span class="d-block">'+moment(arr['date']).format("YYYY")+'</span>'+moment(arr['date']).format("DD/MM")+
-                '</div>'+
-                '<div class="pt-body">'+
-                '<h2 class="ptb-title">'+moment(arr['date']).format("dddd, MMMM Do YYYY")+'</h2>';
-        for (j = 0; j < 3; j++) {
-            var latest = ''+
-                    '<div class="contacts clearfix row">'+
-                    '<div class="col-md-3 col-sm-4 col-xs-12 z-depth-1-bottom">'+
-                    '<div class="c-item">'+
-//                    '<a class="ci-avatar lightbox">'+
-                    '<div data-src="'+arr['competitors'][j]['img_url']+'" class="">'+
-                    '<img src="'+arr['competitors'][j]['img_url']+'" alt="" height="70px" width="70px">'+
+            var content_str = ''+
+                    '<div id="" class="p-timeline">'+
+                    '<div class="pt-line c-gray text-right">'+
+                    '<span class="d-block">'+moment(arr['date']).format("YYYY")+'</span>'+moment(arr['date']).format("DD/MM")+
                     '</div>'+
-//                    '</a>'+
-                    '</div>'+
-                    '<div class="c-info">'+
-                    '<strong>'+arr['competitors'][j]['position']+'</strong>'+
+                    '<div class="pt-body">'+
+                    '<h2 class="ptb-title">'+moment(arr['date']).format("dddd, MMMM Do YYYY")+'</h2>';
+            for (j = 0; j < 3; j++) {
+                var latest = ''+
+                        '<div class="contacts clearfix row">'+
+                        '<div class="col-md-3 col-sm-4 col-xs-12 z-depth-1-bottom">'+
+                        '<div class="c-item">'+
+    //                    '<a class="ci-avatar lightbox">'+
+                        '<div data-src="'+arr['competitors'][j]['img_url']+'" class="">'+
+                        '<img src="'+arr['competitors'][j]['img_url']+'" alt="" height="70px" width="70px">'+
+                        '</div>'+
+    //                    '</a>'+
+                        '</div>'+
+                        '<div class="c-info">'+
+                        '<strong>'+arr['competitors'][j]['position']+'</strong>'+
+                        '</div>'+
+                        '</div>';
+                content_str = content_str.concat(latest);
+            }
+
+            var footer = ''+
                     '</div>'+
                     '</div>';
-            content_str = content_str.concat(latest);
+            var leadbody = $('#test');
+            leadbody.append(content_str.concat(footer));
         }
 
-        var footer = ''+
-                '</div>'+
-                '</div>';
-        var leadbody = $('#test');
-        leadbody.append(content_str.concat(footer));
-    }
+        //            console.log(base_url);
+        var loadMoreArray = [];
+        var token = localStorage.getItem('oaufacewars-token');
 
-    //            console.log(base_url);
-    var loadMoreArray = [];
-    var token = localStorage.getItem('oaufacewars-token');
+        function getLeaderboard(token, marker) {
+            if (typeof(marker)==='undefined') marker = null;
 
-    function getLeaderboard(token, marker) {
-        if (typeof(marker)==='undefined') marker = null;
-
-        $.ajax({
-            type: "GET",
-            url: API_URL+"/leaderboard",
-            timeout: 20000,
-            data: "token="+token+"&marker="+marker,
-            success: function(data){
-                con = data;
-                //console.log(con);
-//                console.log(con);
-//                console.log(moment());
+            $.ajax({
+                type: "GET",
+                url: API_URL+"/leaderboard",
+                timeout: 20000,
+                data: "token="+token+"&marker="+marker,
+                success: function(data){
+                    con = data;
+                    //console.log(con);
+    //                console.log(con);
+    //                console.log(moment());
 
 
-                if (typeof con['competitions'] != 'undefined') {
-                    console.log("length: "+con['competitions'].length);
-                    for (i = 0; i < con['competitions'].length; i++) {
-//                    console.log(con['competitions'][i]);
-                        appender(con['competitions'][i]);
-                        loadMoreArray.push(con['competitions'][i]['date_id']);
+                    if (typeof con['competitions'] != 'undefined') {
+                        console.log("length: "+con['competitions'].length);
+                        for (i = 0; i < con['competitions'].length; i++) {
+    //                    console.log(con['competitions'][i]);
+                            appender(con['competitions'][i]);
+                            loadMoreArray.push(con['competitions'][i]['date_id']);
+                        }
+                    } else {
+    //                    console.log("end ");
+                        $("#load-more").attr("style", "display: none");
                     }
-                } else {
-//                    console.log("end ");
-                    $("#load-more").attr("style", "display: none");
-                }
 
-            },
-            error: function(xhr, desc, err) {
-                console.log(xhr);
-                console.log("|Details: " + desc + "|Error: " + err);
-                if (xhr['responseJSON']['error']) {
-                    notify(xhr['responseJSON']['message'],'danger', 'center');
+                },
+                error: function(xhr, desc, err) {
+                    console.log(xhr);
+                    console.log("|Details: " + desc + "|Error: " + err);
+                    if (xhr['responseJSON']['error']) {
+                        notify(xhr['responseJSON']['message'],'danger', 'center');
+                    }
                 }
-            }
+            });
+        }
+
+        function leaderboard(token) {
+
+            getLeaderboard(token);
+
+        }
+        leaderboard(token);
+
+
+        $('body').on('click', '#load-more', function(e){
+            e.preventDefault();
+            //console.log(loadMoreArray[loadMoreArray.length-1]);
+            getLeaderboard(token,loadMoreArray[loadMoreArray.length-1])
+
         });
-    }
+    </script>
 
-    function leaderboard(token) {
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        getLeaderboard(token);
+            ga('create', 'UA-70475918-1', 'auto');
+            ga('send', 'pageview');
 
-    }
-    leaderboard(token);
-
-
-    $('body').on('click', '#load-more', function(e){
-        e.preventDefault();
-        //console.log(loadMoreArray[loadMoreArray.length-1]);
-        getLeaderboard(token,loadMoreArray[loadMoreArray.length-1])
-        //$(this).parent().addClass('toggled');
-        //var email = $('body').find('#verify-email').val();
-        //var code = $('body').find('#verify-code').val();
-        //if (email !== '' && code !== '') {
-        //    verify(email,code);
-        //
-        //} else {
-        //    notify('Email Address or Code not set', 'danger', 'center');
-        //}
-    });
-</script>
-
-
-</body>
+        </script>
+    </body>
 </html>
