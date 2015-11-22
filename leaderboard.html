@@ -19,7 +19,7 @@
     <link href="css/app.min.2.css" rel="stylesheet">
 </head>
 
-<body class="all-content">
+<body class="all-content light-gallery">
 <header>
 
     <nav id="latest-header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -51,40 +51,7 @@
         <!-- /.container -->
     </nav>
 
-    <!--<ul class="header-inner">-->
 
-        <!--<li class="logo hidden-xs">-->
-            <!--<a href="index.html">OAU FaceWars</a>-->
-        <!--</li>-->
-
-        <!--<li class="pull-right">-->
-            <!--<ul class="top-menu">-->
-                <!--<li class="dropdown">-->
-                    <!--<a data-toggle="dropdown" class="tm-settings" href=""></a>-->
-                    <!--<ul class="dropdown-menu dm-icon pull-right">-->
-                        <!--<li>-->
-                            <!--<a href="./signin.html"><i class="zmdi zmdi-face"></i> Sign-In</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="./leaderboard.html"><i class="zmdi zmdi-settings"></i> Leaderboard</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="./contact.html"><i class="zmdi zmdi-settings"></i> Contact</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="verify.html"><i class="zmdi zmdi-settings"></i> Verify</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="./shuffle.html"><i class="zmdi zmdi-settings"></i> Shuffle</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="./download.html"><i class="zmdi zmdi-settings"></i> Download</a>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</li>-->
-    <!--</ul>-->
 </header>
 
 <section id="main">
@@ -211,77 +178,69 @@
 <script src="js/demo.js"></script>
 <script src="js/moment.js"></script>
 <script type="text/javascript">
+    function appender(arr) {
+
+        var content_str = ''+
+                '<div id="" class="p-timeline">'+
+                '<div class="pt-line c-gray text-right">'+
+                '<span class="d-block">'+moment(arr['date']).format("YYYY")+'</span>'+moment(arr['date']).format("DD/MM")+
+                '</div>'+
+                '<div class="pt-body">'+
+                '<h2 class="ptb-title">'+moment(arr['date']).format("dddd, MMMM Do YYYY")+'</h2>';
+        for (j = 0; j < 3; j++) {
+            var latest = ''+
+                    '<div class="contacts clearfix row">'+
+                    '<div class="col-md-3 col-sm-4 col-xs-12 z-depth-1-bottom">'+
+                    '<div class="c-item">'+
+//                    '<a class="ci-avatar lightbox">'+
+                    '<div data-src="'+arr['competitors'][j]['img_url']+'" class="">'+
+                    '<img src="'+arr['competitors'][j]['img_url']+'" alt="" height="70px" width="70px">'+
+                    '</div>'+
+//                    '</a>'+
+                    '</div>'+
+                    '<div class="c-info">'+
+                    '<strong>'+arr['competitors'][j]['position']+'</strong>'+
+                    '</div>'+
+                    '</div>';
+            content_str = content_str.concat(latest);
+        }
+
+        var footer = ''+
+                '</div>'+
+                '</div>';
+        var leadbody = $('#test');
+        leadbody.append(content_str.concat(footer));
+    }
+
     //            console.log(base_url);
-    function leaderboard() {
-        var token = localStorage.getItem('oaufacewars-token');
+    var loadMoreArray = [];
+    var token = localStorage.getItem('oaufacewars-token');
+
+    function getLeaderboard(token, marker) {
+        if (typeof(marker)==='undefined') marker = null;
+
         $.ajax({
             type: "GET",
             url: API_URL+"/leaderboard",
             timeout: 20000,
-            data: "token="+token,
+            data: "token="+token+"&marker="+marker,
             success: function(data){
                 con = data;
                 //console.log(con);
-                console.log(con);
-                console.log(moment());
+//                console.log(con);
+//                console.log(moment());
 
-                for (i = 0; i < con['competitions'].length; i++) {
-                    console.log(con['competitions'][i]);
-                    appender(con['competitions'][i]);
-                }
-                function appender(arr) {
-//                    var header = '' +
-//                            '<div id="leaderboard-body" class="p-timeline">'+
-//                            '<div class="pt-line c-gray text-right">'+
-//                            '<span class="d-block">2015</span>05/08'+
-//                            '</div>'+
-//                            '<div class="pt-body">'+
-//                            '<h2 class="ptb-title">'+arr['date_id']+'</h2>';
 
-                    var content_str = ''+
-                            '<div id="leaderboard-body" class="p-timeline">'+
-                            '<div class="pt-line c-gray text-right">'+
-                            '<span class="d-block">'+moment(arr['date']).format("YYYY")+'</span>'+moment(arr['date']).format("DD/MM")+
-                            '</div>'+
-                            '<div class="pt-body">'+
-                            '<h2 class="ptb-title">'+moment(arr['date']).format("dddd, MMMM Do YYYY")+'</h2>';
-                    for (j = 0; j < 3; j++) {
-                        var latest = ''+
-                                '<div class="contacts clearfix row">'+
-                                '<div class="col-md-4 col-sm-4 col-xs-12 z-depth-1-bottom">'+
-                                '<div class="c-item">'+
-                                '<a class="ci-avatar lightbox">'+
-                                '<div data-src="'+arr['competitors'][j]['img_url']+'" class="lightbox-item">'+
-                                '<img src="'+arr['competitors'][j]['img_url']+'" alt="" height="70px" width="70px">'+
-                                '</div>'+
-                                '</a>'+
-                                '</div>'+
-                                '<div class="c-info">'+
-                                '<strong>'+arr['competitors'][j]['position']+'</strong>'+
-                                '</div>'+
-                                '</div>';
-                        content_str = content_str.concat(latest);
+                if (typeof con['competitions'] != 'undefined') {
+                    console.log("length: "+con['competitions'].length);
+                    for (i = 0; i < con['competitions'].length; i++) {
+//                    console.log(con['competitions'][i]);
+                        appender(con['competitions'][i]);
+                        loadMoreArray.push(con['competitions'][i]['date_id']);
                     }
-//                    var content =''+
-//                            '<div class="contacts clearfix row">'+
-//                            '<div class="col-md-2 col-sm-4 col-xs-6 z-depth-1-bottom">'+
-//                            '<div class="c-item">'+
-//                            '<a class="ci-avatar lightbox">'+
-//                            '<div data-src="img/contacts/1.jpg" class="lightbox-item">'+
-//                            '<img src="img/contacts/1.jpg" alt="">'+
-//                            '</div>'+
-//                            '</a>'+
-//                            '</div>'+
-//                            '<div class="c-info">'+
-//                            '<strong>1</strong>'+
-//                            '</div>'+
-//                            '</div>';
-
-                    var footer = ''+
-                            '</div>'+
-                            '</div>';
-                    var leadbody = $('#test');
-                    leadbody.append(content_str.concat(footer));
+                } else {
+//                    console.log("end ");
+                    $("#load-more").attr("style", "display: none");
                 }
 
             },
@@ -294,7 +253,29 @@
             }
         });
     }
-    leaderboard();
+
+    function leaderboard(token) {
+
+        getLeaderboard(token);
+
+    }
+    leaderboard(token);
+
+
+    $('body').on('click', '#load-more', function(e){
+        e.preventDefault();
+        //console.log(loadMoreArray[loadMoreArray.length-1]);
+        getLeaderboard(token,loadMoreArray[loadMoreArray.length-1])
+        //$(this).parent().addClass('toggled');
+        //var email = $('body').find('#verify-email').val();
+        //var code = $('body').find('#verify-code').val();
+        //if (email !== '' && code !== '') {
+        //    verify(email,code);
+        //
+        //} else {
+        //    notify('Email Address or Code not set', 'danger', 'center');
+        //}
+    });
 </script>
 
 

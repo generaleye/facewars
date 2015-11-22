@@ -320,7 +320,7 @@ function leaderboard() {
     $response['error'] = FALSE;
     $response['date'] = $date;
     $response['date_id'] = $dateId;
-    if (isset($marker)) {
+    if (isset($marker) && intval($marker) != 0) {
         $dateId = $marker;
     }
     if ($dateId != NULL) {
