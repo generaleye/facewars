@@ -22,7 +22,7 @@ if ($_SERVER["SERVER_NAME"]=="localhost") {
 define('SENDGRID_USERNAME', 'generaleye');
 define('SENDGRID_PASSWORD', 'sendgrid_password');
 define('SENDGRID_FROM_EMAIL', 'developers@oaufacewars.com');
-define('SENDGRID_FROM_NAME', 'OAUFACEWARS');
+define('SENDGRID_FROM_NAME', 'OAU FaceWars');
 
 define('REGISTRATION_SUCCESSFUL', 0);
 define('REGISTRATION_FAILED', 1);

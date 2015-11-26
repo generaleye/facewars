@@ -18,8 +18,8 @@
     //}
     this.API_URL = BASE_URL+"api/v1";
 
-    console.log(BASE_URL);
-    console.log(API_URL);
+    //console.log(BASE_URL);
+    //console.log(API_URL);
     this.URL_REGISTER = API_URL+"/register";
     this.URL_LOGIN = API_URL+"/login";
 

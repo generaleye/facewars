@@ -56,11 +56,15 @@ $(document).ready(function(){
             success: function(data){
                 con = data;
                 //console.log(con);
-                console.log(con);
+                if (con['error']) {
+                    notify(con['message'],'danger', 'center');
+                } else {
+                    notify('Registration Successful: Check your inbox for verification code', 'success', 'center');
+                }
             },
             error: function(xhr, desc, err) {
-                console.log(xhr);
-                console.log("|Details: " + desc + "|Error: " + err);
+                //console.log(xhr);
+                //console.log("|Details: " + desc + "|Error: " + err);
                 if (xhr['responseJSON']['error']) {
                     notify(xhr['responseJSON']['message'],'danger', 'center');
                 }
@@ -78,7 +82,7 @@ $(document).ready(function(){
                 con = data;
                 //console.log(con);
                 //$("tbody#tablespace").html(con);
-                console.log(con);
+                //console.log(con);
                 if (con['error']) {
                     notify(con['message'],'danger', 'center');
                 } else {
@@ -88,7 +92,7 @@ $(document).ready(function(){
                 }
             },
             error: function(xhr, desc, err) {
-                console.log(xhr['responseJSON']['message']);
+                //console.log(xhr['responseJSON']['message']);
                 //console.log("|Details: " + desc + "|Error: " + err);
                 if (xhr['responseJSON']['error']) {
                     notify(xhr['responseJSON']['message'],'danger', 'center');
@@ -108,7 +112,7 @@ $(document).ready(function(){
                 con = data;
                 //console.log(con);
                 //$("tbody#tablespace").html(con);
-                console.log(con);
+                //console.log(con);
                 if (con['error']) {
                     notify(con['message'],'danger', 'center');
                 } else {
@@ -116,7 +120,7 @@ $(document).ready(function(){
                 }
             },
             error: function(xhr, desc, err) {
-                console.log(xhr['responseJSON']['message']);
+                //console.log(xhr['responseJSON']['message']);
                 //console.log("|Details: " + desc + "|Error: " + err);
                 if (xhr['responseJSON']['error']) {
                     notify(xhr['responseJSON']['message'],'danger', 'center');
@@ -136,7 +140,7 @@ $(document).ready(function(){
                 con = data;
                 //console.log(con);
                 //$("tbody#tablespace").html(con);
-                console.log(con);
+                //console.log(con);
                 if (con['error']) {
                     notify(con['message'],'danger', 'center');
                 } else {
@@ -145,7 +149,7 @@ $(document).ready(function(){
                 }
             },
             error: function(xhr, desc, err) {
-                console.log(xhr['responseJSON']['message']);
+                //console.log(xhr['responseJSON']['message']);
                 //console.log("|Details: " + desc + "|Error: " + err);
                 if (xhr['responseJSON']['error']) {
                     notify(xhr['responseJSON']['message'],'danger', 'center');
@@ -165,7 +169,7 @@ $(document).ready(function(){
                 con = data;
                 //console.log(con);
                 //$("tbody#tablespace").html(con);
-                console.log(con);
+                //console.log(con);
                 if (con['error']) {
                     notify(con['message'],'danger', 'center');
                 } else {
@@ -177,7 +181,7 @@ $(document).ready(function(){
                 }
             },
             error: function(xhr, desc, err) {
-                console.log(xhr['responseJSON']['message']);
+                //console.log(xhr['responseJSON']['message']);
                 //console.log("|Details: " + desc + "|Error: " + err);
                 if (xhr['responseJSON']['error']) {
                     notify(xhr['responseJSON']['message'],'danger', 'center');
@@ -247,7 +251,7 @@ $(document).ready(function(){
             notify('Login to Vote', 'inverse', 'center');
         } else {
             var competitor_id = $(this).attr('id');
-            console.log(competitor_id);
+            //console.log(competitor_id);
             vote(competitor_id,token);
         }
     });
