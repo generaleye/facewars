@@ -95,3 +95,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   PRIMARY KEY (`message_id`),
   CONSTRAINT `fk_messages_user_id` FOREIGN KEY (`user_id`) REFERENCES users(`user_id`)
 ) ENGINE=InnoDB;
+
+INSERT INTO `whitelists` (`whitelist_id`, `matric_no`, `description`, `active_status`) VALUES
+  (1, 'CSC/2010/071', 'ODUMUYIWA Oyeleye', 1),
+  (2, 'CSC/2010/060', 'MAYAKI Matthew', 1);
