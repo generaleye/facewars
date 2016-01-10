@@ -348,7 +348,7 @@ class OauFaceWars
 
     public function loadCompetition() {
         $datetime = date("Y-m-d H:i:s", time());
-        $today = "2016-01-20";//date("Y-m-d", time());
+        $today = date("Y-m-d", time());
         $datesArr = array();
         array_push($datesArr,$today);
         for ($i = 1; $i <= 8; $i++) {
