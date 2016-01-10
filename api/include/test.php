@@ -2,6 +2,7 @@
 <?php
 require_once 'OauFaceWars.php';
 $cron = new OauFaceWars();
+
 $today = date("Y-m-d", time());
 if ($cron->doesDateExist($today)) {
     $current_status = $cron->getCurrentStatus($today);
@@ -11,19 +12,3 @@ if ($cron->doesDateExist($today)) {
     }
 }
 $cron->loadCompetition();
-
-
-//<!--#!/usr/bin/php-->
-//require_once 'OauFaceWars.php';
-//$cron = new OauFaceWars();
-////$test = $cron->cronTest();
-//$date_id = $cron->insertDate();
-//if ($date_id != NULL) {
-//    $competitors = $cron->generateCompetitors($date_id);
-//    $cron->rankPreviousDate($date_id);
-//} else {
-//    echo "Date Exists";
-//}
-//
-//
-//?>
